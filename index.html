@@ -1,0 +1,2154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youth Law & Society | Know Your Rights</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+    /* Palette: Navy #244A78 · Sun #FFD447 · Mint #65C9A5 · Coral #FF927D · Paper #F4F6F9 */
+    :root {
+        --navy: #244A78;
+        --navy-deep: #183756;
+        --yellow: #FFD447;
+        --mint: #65C9A5;
+        --coral: #FF927D;
+        --white: #FFFFFF;
+        --bg: #F4F6F9;
+        --ink: #1B3044;
+        --muted: #5C6D7D;
+        --line: #DCE4EC;
+        --paper: #FBF8F1;
+    }
+
+    * { border-radius: 0 !important; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+        font-family: Georgia, "Times New Roman", serif;
+        background: var(--bg);
+        color: var(--ink);
+        -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, h5, h6, button, input, select, label, nav {
+        font-family: "Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    h1, h2, h3, h4 {
+        font-weight: 700 !important;
+        letter-spacing: -0.025em;
+    }
+
+    p, li { line-height: 1.65; }
+    ::selection { background: var(--yellow); color: var(--navy-deep); }
+
+    header {
+        background: var(--white) !important;
+        border-color: var(--line) !important;
+        box-shadow: none !important;
+    }
+    header h1 { color: var(--navy) !important; }
+    .brand-mark { background: var(--navy) !important; color: var(--yellow) !important; }
+
+    #nav-home, #nav-simulators, #nav-quiz, #nav-sources { color: var(--muted) !important; }
+    #nav-home.bg-blue-50,
+    #nav-simulators.bg-blue-50,
+    #nav-quiz.bg-blue-50,
+    #nav-sources.bg-blue-50 {
+        background: transparent !important;
+        color: var(--navy) !important;
+        box-shadow: inset 0 -2px 0 var(--navy) !important;
+    }
+    .tab-active {
+        border-bottom: 3px solid var(--navy) !important;
+        color: var(--navy) !important;
+    }
+
+    .hero-panel {
+        background: var(--navy) !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        position: relative;
+        overflow: hidden;
+    }
+    .hero-panel::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 9px;
+        background: linear-gradient(90deg,
+            var(--yellow) 0 33.33%,
+            var(--mint) 33.33% 66.66%,
+            var(--coral) 66.66% 100%);
+    }
+    .hero-panel h2 { color: var(--white) !important; }
+    .hero-panel p { color: rgba(255, 255, 255, 0.78) !important; }
+    .hero-actions button:first-child {
+        background: var(--yellow) !important;
+        border: 1px solid var(--yellow) !important;
+        color: var(--navy-deep) !important;
+    }
+    .hero-actions button:last-child {
+        background: transparent !important;
+        border: 1px solid rgba(255, 255, 255, 0.35) !important;
+        color: var(--white) !important;
+    }
+
+    /* Solid palette in place of Tailwind's blue/indigo/emerald defaults. */
+    [class~="bg-blue-700"], [class~="bg-blue-600"],
+    [class~="bg-slate-900"], [class~="bg-slate-950"] {
+        background-color: var(--navy) !important;
+    }
+    [class~="bg-slate-800"], [class~="bg-slate-700"] {
+        background-color: var(--navy-deep) !important;
+    }
+    [class~="bg-indigo-700"], [class~="bg-indigo-600"] {
+        background-color: var(--mint) !important;
+        color: var(--navy-deep) !important;
+    }
+    [class~="bg-emerald-500"], [class~="bg-emerald-600"] {
+        background-color: var(--mint) !important;
+        color: var(--navy-deep) !important;
+    }
+    [class~="bg-red-500"], [class~="bg-red-600"] {
+        background-color: var(--coral) !important;
+        color: #4E1A10 !important;
+    }
+
+    [class~="bg-amber-50"], [class~="bg-amber-50/70"], [class~="bg-amber-100"] {
+        background-color: #FFF7DC !important;
+    }
+    [class~="bg-emerald-50"], [class~="bg-emerald-50/80"], [class~="bg-emerald-100"] {
+        background-color: #E9F7F1 !important;
+    }
+    [class~="bg-red-50"], [class~="bg-red-100"] {
+        background-color: #FFF0ED !important;
+    }
+    [class~="bg-blue-50"], [class~="bg-blue-50/70"], [class~="bg-blue-50/90"], [class~="bg-blue-100"] {
+        background-color: #EDF3F9 !important;
+    }
+    [class~="bg-indigo-50"], [class~="bg-indigo-100"] {
+        background-color: #E9F7F1 !important;
+    }
+    [class~="bg-stone-50"], [class~="bg-stone-100"] {
+        background-color: #F7F9FB !important;
+    }
+
+    [class~="text-blue-700"], [class~="text-blue-800"], [class~="text-blue-900"], [class~="text-blue-950"] {
+        color: var(--navy) !important;
+    }
+    [class~="text-indigo-700"], [class~="text-indigo-800"], [class~="text-indigo-900"] {
+        color: #1D5A46 !important;
+    }
+    [class~="text-emerald-700"], [class~="text-emerald-800"], [class~="text-emerald-900"], [class~="text-emerald-950"] {
+        color: #1D5A46 !important;
+    }
+    [class~="text-amber-900"], [class~="text-amber-950"] {
+        color: #5A4610 !important;
+    }
+    [class~="text-red-600"], [class~="text-red-700"], [class~="text-red-900"], [class~="text-red-950"] {
+        color: #8A3A2C !important;
+    }
+    [class~="text-slate-900"], [class~="text-slate-800"] { color: var(--ink) !important; }
+    [class~="text-slate-700"], [class~="text-slate-600"], [class~="text-slate-500"] { color: var(--muted) !important; }
+    [class~="text-slate-400"] { color: #8A98A6 !important; }
+
+    [class*="border-stone-"] { border-color: var(--line) !important; }
+    [class~="border-amber-200"], [class~="border-amber-200/80"], [class~="border-amber-300"] {
+        border-color: #F0D98C !important;
+    }
+    [class~="border-emerald-200"], [class~="border-emerald-200/80"], [class~="border-emerald-300"], [class~="border-emerald-500"] {
+        border-color: #9FDCC5 !important;
+    }
+    [class~="border-red-200"], [class~="border-red-300"], [class~="border-red-400"] {
+        border-color: #F3B4A7 !important;
+    }
+    [class~="border-blue-100"], [class~="border-blue-100/90"], [class~="border-blue-200"], [class~="border-blue-200/80"] {
+        border-color: #D6E2EF !important;
+    }
+    [class~="border-indigo-200"], [class~="border-indigo-200/80"] {
+        border-color: #9FDCC5 !important;
+    }
+
+    /* Square cards, real topic images, no soft AI-style elevation. */
+    .module-card {
+        background: var(--white);
+        border: 1px solid var(--line);
+        box-shadow: none;
+    }
+    .module-card:hover {
+        border-color: var(--navy);
+        box-shadow: 0 12px 28px rgba(36, 74, 120, 0.06);
+        transform: none;
+    }
+    .module-media {
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        background: #E9EEF4;
+        border-bottom: 1px solid var(--line);
+    }
+    .module-media img,
+    .modal-media img,
+    .summary-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+    .section-thumb {
+        width: 72px;
+        height: 72px;
+        object-fit: cover;
+        border: 1px solid var(--line);
+        flex: 0 0 auto;
+    }
+    .section-meta {
+        margin: 3px 0 0;
+        color: var(--muted);
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+    }
+    .modal-media {
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        background: #E9EEF4;
+    }
+    .summary-media {
+        width: 100%;
+        max-width: 340px;
+        margin: 0 auto;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        background: #E9EEF4;
+    }
+
+    #header-progress { color: var(--navy) !important; }
+    header [class~="bg-blue-50/90"] {
+        background: transparent !important;
+        border-color: transparent !important;
+        padding-right: 0;
+    }
+    header .w-2.h-2.bg-blue-600 { background: var(--mint) !important; }
+
+    .cat-btn[data-cat="all"] { border-left: 4px solid var(--navy) !important; }
+    .cat-btn[data-cat="consumer"] { border-left: 4px solid var(--yellow) !important; }
+    .cat-btn[data-cat="employment"] { border-left: 4px solid var(--mint) !important; }
+    .cat-btn[data-cat="privacy"] { border-left: 4px solid var(--coral) !important; }
+
+    #detail-modal { background: rgba(24, 55, 86, 0.72) !important; }
+    #detail-modal > div {
+        background: var(--white) !important;
+        border: 1px solid var(--line) !important;
+        box-shadow: 0 30px 80px rgba(24, 55, 86, 0.28) !important;
+    }
+    #detail-modal button[aria-label="Close modal"] {
+        background: var(--white) !important;
+        border: 1px solid var(--line) !important;
+    }
+
+    #toast-box {
+        background: var(--navy) !important;
+        border-color: var(--navy-deep) !important;
+    }
+    #toast-icon { display: none !important; }
+
+    footer {
+        background: var(--navy) !important;
+        border-top: 0 !important;
+        color: rgba(255, 255, 255, 0.65) !important;
+    }
+    footer p { color: inherit !important; }
+    footer .text-slate-700 { color: var(--white) !important; }
+
+    .quiz-progress { background: var(--mint) !important; }
+    input[type="range"], input[type="checkbox"] { accent-color: var(--navy); }
+    input:focus, select:focus, textarea:focus {
+        outline: 2px solid var(--navy);
+        outline-offset: 1px;
+        box-shadow: none !important;
+    }
+
+    .fade-in, .animate-pulse { animation: none !important; }
+    .card-elevate { transition: border-color 0.15s ease, box-shadow 0.15s ease; }
+    .card-elevate:hover { transform: none; }
+    button:active { transform: none !important; }
+    [class*="shadow-"] { box-shadow: none !important; }
+
+    ::-webkit-scrollbar { width: 10px; height: 10px; }
+    ::-webkit-scrollbar-track { background: #E9EEF4; }
+    ::-webkit-scrollbar-thumb { background: #A9B8C8; border-radius: 0; }
+    ::-webkit-scrollbar-thumb:hover { background: #7F91A4; }
+</style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-blue-700 selection:text-white">
+
+    <header class="bg-white/95 backdrop-blur-md border-b border-stone-200/90 sticky top-0 z-40 shadow-2xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3 cursor-pointer group" onclick="switchView('home')">
+                <div class="brand-mark w-10 h-10 flex items-center justify-center text-xl font-extrabold">
+                    §
+                </div>
+                <div>
+                    <h1 class="text-lg sm:text-xl font-extrabold tracking-tight text-slate-900 leading-none">Youth Law & Society</h1>
+                </div>
+            </div>
+
+            <nav class="hidden lg:flex items-center space-x-1.5">
+                <button onclick="switchView('home')" id="nav-home" class="px-3.5 py-2 text-sm font-semibold text-slate-700 hover:bg-stone-100 transition whitespace-nowrap">Home & Topics</button>
+                <button onclick="switchView('simulators')" id="nav-simulators" class="px-3.5 py-2 text-sm font-semibold text-slate-700 hover:bg-stone-100 transition whitespace-nowrap">Interactive Demos</button>
+                <button onclick="switchView('quiz')" id="nav-quiz" class="px-3.5 py-2 text-sm font-semibold text-slate-700 hover:bg-stone-100 transition whitespace-nowrap">Knowledge Quizzes</button>
+                <button onclick="switchView('sources')" id="nav-sources" class="px-3.5 py-2 text-sm font-semibold text-slate-700 hover:bg-stone-100 transition whitespace-nowrap">Legal Sources</button>
+            </nav>
+
+            <div class="flex items-center space-x-3">
+                <div class="bg-blue-50/90 border border-blue-200/80 px-3.5 py-1.5 rounded-full flex items-center space-x-2 shadow-2xs">
+                    <span class="w-2 h-2 bg-blue-600"></span>
+                    <span class="text-xs font-bold text-blue-900 tracking-tight" id="header-progress">0 / 12 mastered</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="lg:hidden flex border-t border-stone-200/80 bg-white overflow-x-auto">
+            <button onclick="switchView('home')" id="m-nav-home" class="flex-1 py-2.5 px-2 text-xs font-semibold text-center text-slate-600 whitespace-nowrap">Topics</button>
+            <button onclick="switchView('simulators')" id="m-nav-simulators" class="flex-1 py-2.5 px-2 text-xs font-semibold text-center text-slate-600 whitespace-nowrap">Demos</button>
+            <button onclick="switchView('quiz')" id="m-nav-quiz" class="flex-1 py-2.5 px-2 text-xs font-semibold text-center text-slate-600 whitespace-nowrap">Quizzes</button>
+            <button onclick="switchView('sources')" id="m-nav-sources" class="flex-1 py-2.5 px-2 text-xs font-semibold text-center text-slate-600 whitespace-nowrap">Sources</button>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
+
+        <section id="view-home" class="fade-in space-y-8">
+            <div class="hero-panel p-7 sm:p-11 text-white relative overflow-hidden">
+                <div class="relative z-10 max-w-3xl space-y-4">
+                    <h2 class="text-3xl sm:text-4xl lg:text-[2.35rem] font-extrabold tracking-tight leading-[1.15]">
+                        Know your rights as a young person.
+                    </h2>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
+                        Complex laws translated into plain, everyday language. Explore your protections when shopping online, working a job, or using apps and AI.
+                    </p>
+                    <div class="hero-actions pt-2 flex flex-wrap gap-3">
+                        <button onclick="switchView('simulators')" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 active:scale-[0.99] text-white font-semibold rounded-xl text-sm shadow-md shadow-blue-950/50 transition">
+                            Try a scenario
+                        </button>
+                        <button onclick="switchView('quiz')" class="px-5 py-2.5 bg-white/10 hover:bg-white/20 active:scale-[0.99] text-white font-semibold rounded-xl text-sm border border-white/20 backdrop-blur-xs transition">
+                            Take a quiz
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-between gap-4">
+                <div class="flex flex-wrap gap-2" id="category-filters">
+                    <button onclick="filterCategory('all')" data-cat="all" class="cat-btn px-4 py-2 rounded-xl text-sm font-bold bg-blue-700 text-white shadow-xs transition">
+                        All modules
+                    </button>
+                    <button onclick="filterCategory('consumer')" data-cat="consumer" class="cat-btn px-4 py-2 rounded-xl text-sm font-semibold bg-white text-slate-700 border border-stone-200 hover:bg-stone-100 transition">
+                        1. Youth Consumer Rights
+                    </button>
+                    <button onclick="filterCategory('employment')" data-cat="employment" class="cat-btn px-4 py-2 rounded-xl text-sm font-semibold bg-white text-slate-700 border border-stone-200 hover:bg-stone-100 transition">
+                        2. Youth Employment Rights
+                    </button>
+                    <button onclick="filterCategory('privacy')" data-cat="privacy" class="cat-btn px-4 py-2 rounded-xl text-sm font-semibold bg-white text-slate-700 border border-stone-200 hover:bg-stone-100 transition">
+                        3. Youth Digital Privacy
+                    </button>
+                </div>
+
+                <div class="relative w-full sm:w-72">
+                    <input type="text" id="topic-search" oninput="renderModules()" placeholder="Search rights, rules, laws..." class="w-full px-4 py-2.5 bg-white border border-stone-200 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none transition">
+                </div>
+            </div>
+
+            <div id="modules-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            </div>
+        </section>
+
+        <section id="view-simulators" class="hidden fade-in space-y-6">
+            <div class="bg-white rounded-2xl p-6 sm:p-7 border border-stone-200 shadow-2xs">
+                <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight">Scenario lab</h2>
+                <p class="text-sm text-slate-600 mt-1">Choose a topic and test the rule in a realistic situation.</p>
+
+                <div class="mt-5">
+                    <label for="sim-select" class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Scenario</label>
+                    <select id="sim-select" onchange="loadSimulator(this.value)" class="w-full md:w-1/2 p-3 bg-stone-50 border border-stone-300 rounded-xl text-sm font-semibold text-slate-800 focus:ring-2 focus:ring-blue-600 focus:outline-none transition">
+                    </select>
+                </div>
+            </div>
+
+            <div id="simulator-stage" class="bg-white rounded-3xl border border-stone-200 shadow-sm p-6 sm:p-8">
+            </div>
+        </section>
+
+        <section id="view-quiz" class="hidden fade-in space-y-6">
+            <div class="bg-white rounded-2xl p-6 sm:p-7 border border-stone-200 shadow-2xs flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div>
+                    <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight">Quizzes</h2>
+                    <p class="text-sm text-slate-600 mt-1">Ten questions per topic. Score 80% or higher to earn a mastery badge.</p>
+                </div>
+                <div class="w-full md:w-80">
+                    <label for="quiz-select" class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5">Quiz</label>
+                    <select id="quiz-select" onchange="startQuiz(this.value)" class="w-full p-3 bg-stone-50 border border-stone-300 rounded-xl text-sm font-semibold text-slate-800 focus:ring-2 focus:ring-blue-600 focus:outline-none transition">
+                    </select>
+                </div>
+            </div>
+
+            <div id="quiz-container" class="bg-white rounded-3xl border border-stone-200 shadow-sm p-6 sm:p-8">
+            </div>
+        </section>
+
+        <section id="view-sources" class="hidden fade-in space-y-6">
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-stone-200 shadow-2xs">
+                <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight">Legal sources</h2>
+                <p class="text-sm text-slate-600 mt-1">Primary sources behind the simplified rules.</p>
+                
+                <div id="sources-list" class="mt-6 space-y-4">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="detail-modal" onclick="if(event.target === this) closeModal()" class="fixed inset-0 bg-slate-950/60 backdrop-blur-xs z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-stone-200 p-6 sm:p-8 relative fade-in">
+            <button onclick="closeModal()" aria-label="Close modal" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-stone-100 hover:bg-stone-200 flex items-center justify-center text-slate-600 font-bold transition">
+                ×
+            </button>
+            <div id="modal-body" class="space-y-5">
+            </div>
+        </div>
+    </div>
+
+    <div id="toast-box" class="fixed bottom-5 right-5 z-50 hidden bg-slate-900 text-white px-5 py-3.5 rounded-2xl shadow-xl border border-slate-700 text-sm font-medium flex items-center space-x-3 fade-in">
+        <span id="toast-icon">ℹ</span>
+        <span id="toast-msg">Notification</span>
+    </div>
+
+    <footer class="bg-white border-t border-stone-200 py-6 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-3">
+            <p class="font-semibold text-slate-700">Youth Law & Society — Created by Ahmed Samy</p>
+            <p>A plain-language guide to consumer, work, and digital rights.</p>
+        </div>
+    </footer>
+
+    <script>
+        const modulesData = [
+            {
+                id: "1.1",
+                category: "consumer",
+                categoryLabel: "Youth Consumer Rights",
+                title: "Unfair Contracts and Subscriptions",
+                icon: "",
+                image: "images/1.1 Unfair Contracts and Subscriptions.jpeg",
+                rule: "Companies cannot hide unfair rules in their terms and conditions that create a disadvantage for you. Every agreement or contract must be written in clear and easy-to-understand language.",
+                example: "You sign up for a free trial of a mobile game or streaming app, but the contract automatically puts you into an expensive monthly subscription without a clear warning.",
+                right: "If a contract term is hidden, confusing, or completely unfair to you as a teenager, it is legally invalid and cannot be enforced against you.",
+                legalCitations: [
+                    {
+                        law: "Council Directive 93/13/EEC (Unfair Terms in Consumer Contracts) — Article 3(1)",
+                        quote: "\"A contractual term which has not been individually negotiated shall be regarded as unfair if, contrary to the requirement of good faith, it causes a significant imbalance in the parties' rights and obligations arising under the contract, to the detriment of the consumer.\""
+                    },
+                    {
+                        law: "Council Directive 93/13/EEC — Article 5",
+                        quote: "\"In the case of contracts where all or certain terms offered to the consumer are in writing, these terms must always be drafted in plain, intelligible language.\""
+                    }
+                ],
+                quiz: [
+                    {
+                        q: "If a mobile game app hides a secret fee inside its terms to charge your parents every month, what does the law say?",
+                        options: ["It is legal and totally fine because you clicked download.", "It is illegal, unfair, and legally invalid if hidden.", "You must keep paying it forever without any rights to stop."],
+                        correct: 1
+                    },
+                    {
+                        q: "Why do digital consumer laws require contracts and terms to be written in clear and simple language?",
+                        options: ["To make the app developer's website look bigger.", "To take up random extra space on your screen.", "So everyone, including teens, can easily understand them."],
+                        correct: 2
+                    },
+                    {
+                        q: "You sign up for a free music streaming trial that automatically starts charging money without warning. What rule applies?",
+                        options: ["Unfair automatic billing traps and hidden charges are banned.", "Free trials are legally required to turn into expensive payments.", "Companies can do whatever they want with subscriptions."],
+                        correct: 0
+                    },
+                    {
+                        q: "What is the primary purpose of consumer protection rules regarding mobile apps and online services?",
+                        options: ["To stop kids and teenagers from playing video games.", "To prevent unfair disadvantages and traps for users.", "To make digital apps much more expensive to download."],
+                        correct: 1
+                    },
+                    {
+                        q: "If a game developer hides a tricky renewal clause on page 50 of their terms, is it enforceable against you?",
+                        options: ["Yes, if you scrolled past it quickly.", "No, hidden and confusing terms are invalid and cannot be enforced.", "Only on weekends and school holidays."],
+                        correct: 1
+                    },
+                    {
+                        q: "What should happen before a free trial officially turns into a paid monthly subscription?",
+                        options: ["A surprise charge on your connected card.", "Nothing at all happens until you look for it.", "Clear warning and explicit notice before any money is taken."],
+                        correct: 2
+                    },
+                    {
+                        q: "Which statement best describes your protection against unfair digital contract terms?",
+                        options: ["You are fully protected from one-sided legal traps.", "You have zero rights when buying apps online.", "You must pay for all mistakes made by companies."],
+                        correct: 0
+                    },
+                    {
+                        q: "If a subscription agreement is confusing, vague, and misleading, how do courts view it?",
+                        options: ["Perfectly fine, fair, and helpful.", "Unfavorable to the company that wrote the confusing text.", "Entirely the user's fault for reading it."],
+                        correct: 1
+                    },
+                    {
+                        q: "Why is a deceptive free trial considered an unfair commercial practice?",
+                        options: ["It makes the loading screens take too fast.", "It uses too much colorful graphics.", "It tricks users into paying money without proper consent."],
+                        correct: 2
+                    },
+                    {
+                        q: "What is the ultimate outcome for a contract term proven to be unfair under consumer protection acts?",
+                        options: ["It becomes legally void and unenforceable against you.", "It becomes twice as expensive for the company.", "It stays active and valid forever."],
+                        correct: 0
+                    }
+                ]
+            },
+            {
+                id: "1.2",
+                category: "consumer",
+                categoryLabel: "Youth Consumer Rights",
+                title: "Defective Apps and Broken Digital Content",
+                icon: "",
+                image: "images/1.2 Defective Apps and Broken Digital Content.jpeg",
+                rule: "When you buy an app or a game, the company must deliver it on time, with no delay. It must match what it was advertised as, work properly, and come with necessary security updates to keep it running safely.",
+                example: "You spend your money on an in-game item or downloadable app, but it crashes constantly or is missing half the features promised on the store page.",
+                right: "You have the legal right to ask to get the app fixed, updated, or even fully refunded if it doesn’t match what you paid for.",
+                legalCitations: [
+                    {
+                        law: "EU Directive 2019/770 (Digital Content & Digital Services) — Article 6(1)",
+                        quote: "\"The trader shall supply the digital content or digital service to the consumer without undue delay after the conclusion of the contract, unless the parties have agreed otherwise.\""
+                    },
+                    {
+                        law: "EU Directive 2019/770 — Article 7",
+                        quote: "\"The digital content or digital service shall fit the description, quantity and quality, and possess the functionality, compatibility, interoperability and other features, as required by the contract.\""
+                    },
+                    {
+                        law: "EU Directive 2019/770 — Article 8(1)",
+                        quote: "\"The trader shall ensure that the consumer is informed of and supplied with updates, including security updates, that are necessary to keep the digital content or digital service in conformity.\""
+                    }
+                ],
+                quiz: [
+                    {
+                        q: "If you buy a mobile app or video game, when must the company deliver it to you?",
+                        options: ["On time, with no unnecessary delay.", "Whenever the developers feel like logging on.", "Only after waiting one full year."],
+                        correct: 0
+                    },
+                    {
+                        q: "What must an online game or downloaded app match when you buy it?",
+                        options: ["Whatever random code the computer generates on the spot.", "Nothing at all from the store page.", "Exactly what was advertised in the store description."],
+                        correct: 2
+                    },
+                    {
+                        q: "You buy an in-game item, but it crashes constantly and is missing half its features. What does the law say?",
+                        options: ["Games are legally allowed to be completely broken.", "It must work properly and come with necessary security updates.", "You have to rewrite the game's code yourself."],
+                        correct: 1
+                    },
+                    {
+                        q: "What is your legal right if an app you paid for does not match what was advertised?",
+                        options: ["Ask to get it fixed, updated, or fully refunded.", "Delete your device and throw your phone away.", "Delete your account and stay quiet forever."],
+                        correct: 0
+                    },
+                    {
+                        q: "Are companies allowed to sell digital games that lack basic security updates to keep them running safely?",
+                        options: ["Yes, safety rules never apply to apps.", "Only for games that cost less than five dollars.", "No, they must come with necessary security updates to stay safe."],
+                        correct: 2
+                    },
+                    {
+                        q: "If a downloaded game fails to work properly right after purchase, who is responsible for delivering a working product?",
+                        options: ["Your school computer teacher.", "The company that sold and delivered it to you.", "Your home internet router manufacturer."],
+                        correct: 1
+                    },
+                    {
+                        q: "What does a 'full refund' mean for a broken digital app?",
+                        options: ["Getting your money completely back because the product didn't work.", "Getting a discount code for a different online store.", "Receiving random bonus virtual coins in a different game."],
+                        correct: 0
+                    },
+                    {
+                        q: "If an app crashes every two minutes, can you legally ask for it to be fixed?",
+                        options: ["Only if you pay the company an extra repair fee.", "No, software bugs are normal and legal forever.", "Yes, you have the right to ask for a fix, update, or refund."],
+                        correct: 2
+                    },
+                    {
+                        q: "Why do consumer protection laws cover digital apps and video games?",
+                        options: ["To stop people from ever playing video games.", "Because digital goods count as real purchases you spent your money on.", "To make downloading files take much longer."],
+                        correct: 1
+                    },
+                    {
+                        q: "If a company ignores you when you ask for a refund for a completely broken app, what should you do?",
+                        options: ["Ask a parent or guardian to help exercise your legal consumer rights.", "Try to hack their main computer servers.", "Buy the exact same broken app a second time."],
+                        correct: 0
+                    }
+                ]
+            },
+            {
+                id: "1.3",
+                category: "consumer",
+                categoryLabel: "Youth Consumer Rights",
+                title: "Late Online Orders and Missing Deliveries",
+                icon: "",
+                image: "images/1.3 Late Online Orders and Missing Deliveries.jpeg",
+                rule: "Online shops must deliver your physical packages without undue delay, and no later than 30 days from when you placed the order (unless you agreed to a different timeline).",
+                example: "You order a toy or a hoodie online, but weeks go by and the package never arrives with the seller ignoring your messages.",
+                right: "You can ask your parents to give the seller one final deadline. If they still don’t deliver it, you can cancel the order and get your money back.",
+                legalCitations: [
+                    {
+                        law: "EU Directive 2011/83/EU (Consumer Rights Directive) — Article 18(1)",
+                        quote: "\"Unless the parties have agreed otherwise on the time of delivery, the trader shall deliver the goods by transferring the physical possession or control of the goods to the consumer without undue delay, but not later than 30 days from the conclusion of the contract.\""
+                    },
+                    {
+                        law: "EU Directive 2011/83/EU — Article 18(2) & (3)",
+                        quote: "\"If the trader fails to deliver the goods within that additional period of time, the consumer shall be entitled to terminate the contract. Upon termination of the contract, the trader shall, without undue delay, reimburse all sums paid under the contract.\""
+                    }
+                ],
+                quiz: [
+                    {
+                        q: "What is the standard maximum legal delivery deadline for physical online orders if no specific date was agreed upon?",
+                        options: ["Exactly 365 days from the purchase date.", "No later than 30 days from when you placed the order.", "Whenever the seller decides to ship it."],
+                        correct: 1
+                    },
+                    {
+                        q: "You order a hoodie online, but weeks go by and it never arrives while the company ignores your messages. Who can you ask to help set a final deadline?",
+                        options: ["Your parents or legal guardians.", "A random stranger on the street.", "The delivery truck driver directly."],
+                        correct: 0
+                    },
+                    {
+                        q: "If an online shop misses the 30-day delivery deadline and fails to deliver after your final deadline, what is your legal right?",
+                        options: ["You have to wait another full year.", "You must pay a penalty fee for complaining.", "You can cancel the order and get your money back."],
+                        correct: 2
+                    },
+                    {
+                        q: "Are online sellers allowed to ignore your messages when a package is missing past the legal delivery limit?",
+                        options: ["Yes, customer service is entirely optional.", "No, sellers have a legal obligation to respond and fulfill deliveries properly.", "Only if the item was bought on a weekend."],
+                        correct: 1
+                    },
+                    {
+                        q: "If you specifically agree with an online store on a custom delivery timeline (for example, 45 days), which rule applies?",
+                        options: ["The custom agreed timeline replaces the standard 30-day rule.", "The store breaks the law instantly.", "Delivery rules no longer apply at all."],
+                        correct: 0
+                    },
+                    {
+                        q: "What is the primary purpose of delivery time limits in online shopping consumer protection laws?",
+                        options: ["To make shipping companies run faster.", "To protect buyers from being scammed or ghosted by unreliable sellers.", "To make online shopping completely illegal."],
+                        correct: 1
+                    },
+                    {
+                        q: "If your online order arrives damaged or completely missing, what should your very first step be?",
+                        options: ["Delete your internet browser forever.", "Contact the seller or company to report the missing package.", "File a police report for a stolen car."],
+                        correct: 1
+                    },
+                    {
+                        q: "Does a company have the right to keep your money if they fail to deliver your package and you cancel the order?",
+                        options: ["Yes, they earned it by trying.", "No, they are legally required to refund your purchase.", "Only half of your money."],
+                        correct: 1
+                    },
+                    {
+                        q: "Why is tracking your delivery dates important when shopping online?",
+                        options: ["To know when your 30-day consumer protection window starts and ends.", "To make your phone battery drain faster.", "It is not important at all."],
+                        correct: 0
+                    },
+                    {
+                        q: "If an online store refuses to refund your money after failing to deliver your package on time, what does this violate?",
+                        options: ["Basic consumer rights and e-commerce delivery laws.", "The rules of board games.", "School attendance policies."],
+                        correct: 0
+                    }
+                ]
+            },
+            {
+                id: "1.4",
+                category: "consumer",
+                categoryLabel: "Youth Consumer Rights",
+                title: "Transparent Pricing and Hidden Fees",
+                icon: "",
+                image: "images/1.4 Transparent Pricing and Hidden Fees.jpeg",
+                rule: "Websites cannot charge you extra fees just for choosing a specific payment method that exceed what it costs them. Also, they cannot sneak extra charges on your bill using pre-ticked checkboxes that you have to uncheck yourself.",
+                example: "Buying a concert ticket, only to find out at the final checkout screen that 'service protection' or 'insurance' were automatically checked without your approval.",
+                right: "You must give express consent before they add extra costs. If a company charges you using a hidden default pre-ticked box, they are legally required to refund your payment.",
+                legalCitations: [
+                    {
+                        law: "EU Directive 2011/83/EU — Article 19 (Payment Fees)",
+                        quote: "\"Member States shall prohibit traders from charging consumers, in respect of the use of a given means of payment, fees that exceed the cost borne by the trader for the use of such means.\""
+                    },
+                    {
+                        law: "EU Directive 2011/83/EU — Article 22 (Additional Payments)",
+                        quote: "\"Before the consumer is bound by the contract or offer, the trader shall seek the express consent of the consumer to any extra payment... If the trader has not obtained the consumer's express consent but has inferred it by using default options which the consumer is required to reject in order to avoid the additional payment, the consumer shall be entitled to reimbursement of this payment.\""
+                    }
+                ],
+                quiz: [
+                    {
+                        q: "How do transparent pricing laws treat extra payments added during checkout?",
+                        options: ["Sellers can add any surprise fees they want.", "Sellers must ask for your clear, express consent before charging extra.", "Extra fees are always mandatory for teenagers."],
+                        correct: 1
+                    },
+                    {
+                        q: "You buy a concert ticket online and notice 'insurance' was already checked by default in a pre-ticked box. Is this allowed?",
+                        options: ["Yes, pre-ticked boxes are completely legal.", "No, pre-ticked checkboxes for extra costs are banned.", "Only if the ticket costs more than $50."],
+                        correct: 1
+                    },
+                    {
+                        q: "Are websites allowed to charge you an extra fee just for paying with a specific card that exceeds their own processing cost?",
+                        options: ["Yes, they can charge unlimited card surcharges.", "No, payment fees cannot exceed the actual cost borne by the seller.", "Only on Sundays."],
+                        correct: 1
+                    },
+                    {
+                        q: "What does 'express consent' mean when paying for something online?",
+                        options: ["Scrolling quickly past the checkout page.", "Actively and clearly choosing to accept an extra cost yourself.", "Closing the browser tab immediately."],
+                        correct: 1
+                    },
+                    {
+                        q: "Why do consumer laws ban pre-ticked boxes for add-on services?",
+                        options: ["Because checkboxes take too long to load.", "To stop websites from tricking people into paying for things they didn't want.", "To make websites look cleaner."],
+                        correct: 1
+                    },
+                    {
+                        q: "If a website hides a mandatory 'handling fee' until the very last millisecond after you pay, what rule is broken?",
+                        options: ["Transparent pricing and upfront cost disclosure.", "International aviation law.", "School library rules."],
+                        correct: 0
+                    },
+                    {
+                        q: "If a company illegally charges you using a hidden default pre-ticked box, what are they legally required to do?",
+                        options: ["Keep the extra money as a bonus reward.", "Refund your payment.", "Send you a digital trophy."],
+                        correct: 1
+                    },
+                    {
+                        q: "When buying items online, what should you always check carefully before clicking the final payment button?",
+                        options: ["The total price to make sure no sneaky extra fees were automatically added.", "The weather forecast in another country.", "How many followers the website has."],
+                        correct: 0
+                    },
+                    {
+                        q: "Are online sellers allowed to use confusing text or tricky hidden buttons to make you agree to extra costs?",
+                        options: ["Yes, confusion is part of online shopping.", "Only during weekend sales.", "No, pricing and choices must be clear and transparent."],
+                        correct: 2
+                    },
+                    {
+                        q: "What is the main goal of transparent pricing regulations for digital consumers?",
+                        options: ["To ensure buyers know the exact, honest cost upfront without unpleasant surprises.", "To make online stores close down early.", "To stop people from buying digital tickets."],
+                        correct: 0
+                    }
+                ]
+            },
+            {
+                id: "2.1",
+                category: "employment",
+                categoryLabel: "Youth Employment Rights",
+                title: "Minimum Working Ages and Working Tiers",
+                icon: "",
+                image: "images/2.1 Minimum Working Ages and Working Tiers.jpeg",
+                rule: "Full-time work is banned until you finish required schooling, and the minimum age cannot be set lower than 15 years old. However, national laws can allow teens aged 13 to 15 to do safe light work that does not harm their health, development, or school attendance.",
+                example: "A 14-year-old kid helps casually at a family shop for a few hours on weekends, which is safe light work—but being scheduled for heavy shifts during school hours is illegal.",
+                right: "No employer can force you into regular full-time employment before you reach the legal minimum age and finish compulsory schooling.",
+                legalCitations: [
+                    {
+                        law: "ILO Minimum Age Convention No. 138 — Article 2(3)",
+                        quote: "\"The minimum age specified in pursuance of paragraph 1 of this Article shall not be less than the age of completion of compulsory schooling and, in any case, shall not be less than 15 years.\""
+                    },
+                    {
+                        law: "ILO Convention No. 138 — Article 7(1) & EU Directive 94/33/EC Article 4(1)",
+                        quote: "\"National laws or regulations may permit the employment or work of persons 13 to 15 years of age on light work which is— (a) not likely to be harmful to their health or development; and (b) not such as to prejudice their attendance at school...\""
+                    }
+                ],
+                quiz: [
+                    {
+                        q: "What is the standard minimum general working age set by international labor standards?",
+                        options: ["10 years old with no restrictions.", "15 years old, with full-time work banned until schooling is finished.", "18 years old for every single type of job."],
+                        correct: 1
+                    },
+                    {
+                        q: "Are national labor laws allowed to let younger children (aged 13 to 15) do any kind of job they want?",
+                        options: ["Yes, kids can work any job at any age.", "No, they are only allowed to do safe, light work that does not harm their health or school attendance.", "Only if they skip school entirely."],
+                        correct: 1
+                    },
+                    {
+                        q: "A 14-year-old kid is helping casually at a family shop for a few hours on weekends, but is also scheduled for heavy shifts during school hours. Which part of this violates labor laws?",
+                        options: ["Working casually at a family shop on weekends.", "Doing heavy shifts during school hours that interfere with education.", "Getting paid pocket money for helping out."],
+                        correct: 1
+                    },
+                    {
+                        q: "Why is full-time employment banned until teenagers finish their required basic schooling?",
+                        options: ["To ensure young people get a proper education and finish developing safely.", "Because companies do not like hiring teenagers.", "To make sure teenagers stay home all day."],
+                        correct: 0
+                    },
+                    {
+                        q: "Can an employer force you into regular employment before you reach the legal minimum working age?",
+                        options: ["Yes, if your parents sign a permission slip.", "Only during summer and winter vacations.", "No employer can legally force you into regular employment before the minimum age."],
+                        correct: 2
+                    },
+                    {
+                        q: "What defines 'light work' for teenagers aged 13–15 under labor guidelines?",
+                        options: ["Work that is safe, light, and completely harmless to their health, development, and schooling.", "Working night shifts in heavy factories.", "Lifting heavy boxes for 10 hours a day."],
+                        correct: 0
+                    },
+                    {
+                        q: "If a country sets its minimum working age, what is the absolute lowest limit international rules allow for light work exceptions?",
+                        options: ["7 years old.", "13 years old.", "16 years old."],
+                        correct: 1
+                    },
+                    {
+                        q: "What happens to compulsory school attendance requirements when child labor laws are applied?",
+                        options: ["Schooling is required, and work must never take the place of education.", "School becomes optional once you turn 12.", "Work replaces school permanently."],
+                        correct: 0
+                    },
+                    {
+                        q: "Who is primarily protected by minimum working age tiers and employment regulations?",
+                        options: ["Corporate business owners.", "Children and teenagers who are still growing and studying.", "Adult workers looking for overtime shifts."],
+                        correct: 1
+                    },
+                    {
+                        q: "If an underage teenager is found working in a regular job during school hours, what does this violate?",
+                        options: ["International youth employment and education laws.", "The rules of online video games.", "Standard smartphone app terms of service."],
+                        correct: 0
+                    }
+                ]
+            },
+            {
+                id: "2.2",
+                category: "employment",
+                categoryLabel: "Youth Employment Rights",
+                title: "Dangerous Jobs and Workplace Safety",
+                icon: "",
+                image: "images/2.2 Dangerous Jobs and Workplace Safety.jpeg",
+                rule: "Kids and teenagers are strictly banned from doing dangerous jobs that could hurt them, their body, health, or safety in general. Because teenagers are still growing and learning, bosses have a legal duty to keep them away from hazards or unsafe tasks.",
+                example: "You get a summer job, and your boss asks you to use heavy machinery, climb dangerous heights, or handle strong chemicals without proper safety.",
+                right: "You have the absolute right to a safe workplace. No boss is allowed to take advantage of your age or inexperience by making you do dangerous jobs.",
+                legalCitations: [
+                    {
+                        law: "ILO Worst Forms of Child Labour Convention No. 182 — Article 3(d)",
+                        quote: "\"For the purposes of this Convention, the term 'the worst forms of child labour' comprises: ... (d) work which, by its nature or the circumstances in which it is carried out, is likely to harm the health, safety or morals of children.\""
+                    },
+                    {
+                        law: "EU Young Workers Directive 94/33/EC — Article 7(1)",
+                        quote: "\"Member States shall ensure that young people are protected from any specific risks to their safety, health and development which are the consequence of their lack of experience, of absence of awareness of existing or potential risks or of the fact that young people have not yet fully matured.\""
+                    }
+                ],
+                quiz: [
+                    {
+                        q: "What does the law say about teenagers doing dangerous jobs that could hurt their body, health, or overall safety?",
+                        options: ["Teens are strictly banned from doing dangerous and hazardous jobs.", "Teens can do any dangerous job if they get paid extra pocket money.", "Dangerous jobs are allowed as long as you wear a baseball cap."],
+                        correct: 0
+                    },
+                    {
+                        q: "Because teenagers are still growing and learning, what special duty do bosses and employers have toward them?",
+                        options: ["To make them work extra hours every weekend.", "To keep them safely away from workplace hazards and dangerous tasks.", "To give them no training at all on day one."],
+                        correct: 1
+                    },
+                    {
+                        q: "Your boss at a summer job asks you to use heavy industrial machinery or handle strong chemicals without safety gear. What rule applies?",
+                        options: ["You must do whatever the boss says immediately.", "You have the absolute right to a safe workplace and refusal of hazardous work.", "Only adults are allowed to refuse dangerous tasks."],
+                        correct: 1
+                    },
+                    {
+                        q: "Are employers legally allowed to take advantage of a teenager's age or inexperience by giving them risky assignments?",
+                        options: ["Yes, inexperience means you have to do the hardest jobs.", "Only during the first week of a job.", "No boss is allowed to take advantage of your age to make you do dangerous jobs."],
+                        correct: 2
+                    },
+                    {
+                        q: "What is your fundamental legal right regarding workplace safety as a young worker?",
+                        options: ["The absolute right to a safe and protected workplace.", "The right to work in a tall building without a harness.", "The right to handle any chemical you want."],
+                        correct: 0
+                    },
+                    {
+                        q: "Which of these tasks would be considered strictly illegal and dangerous for a 15-year-old worker?",
+                        options: ["Sorting papers at a desk.", "Operating heavy, dangerous factory machinery without proper supervision.", "Greeting customers at a local bookstore."],
+                        correct: 1
+                    },
+                    {
+                        q: "Why does labor law put strict safety limits on what jobs teenagers are allowed to do?",
+                        options: ["Because teens are still growing physically and lack professional experience.", "Because teenagers are too lazy to work hard.", "To make sure companies never hire young workers."],
+                        correct: 0
+                    },
+                    {
+                        q: "If an employer tells you a dangerous task is 'not that big a deal,' but it violates youth safety rules, what is true?",
+                        options: ["The boss's opinion cancels out the law.", "The law still protects you and bans the employer from forcing you to do it.", "You have to do it once to prove you are brave."],
+                        correct: 1
+                    },
+                    {
+                        q: "Under international conventions, work that harms the health, safety, or morals of children is classified as:",
+                        options: ["A fun summer internship.", "One of the worst forms of child labour and strictly prohibited.", "Standard part-time training."],
+                        correct: 1
+                    },
+                    {
+                        q: "What should you do if a workplace asks you to climb dangerous heights or handle toxic substances?",
+                        options: ["Refuse the unsafe task immediately and inform a parent, guardian, or labor authority.", "Do it quietly without telling anyone.", "Post a selfie from the dangerous ledge."],
+                        correct: 0
+                    }
+                ]
+            },
+            {
+                id: "2.3",
+                category: "employment",
+                categoryLabel: "Youth Employment Rights",
+                title: "Protecting Education and Shift Limits",
+                icon: "",
+                image: "images/2.3 Protecting Education and Shift Limits.jpeg",
+                rule: "Countries must limit the working time for teenagers to a maximum of 8 hours a day and 40 hours a week. Children also have the right to be protected from any work that interferes with their education, health, or physical and social development.",
+                example: "An employer tries to schedule you for long 10-hour shifts during school exam weeks, leaving you exhausted and unable to study.",
+                right: "You have the legal right to strict daily and weekly hour caps (max 8h/day, 40h/week) and full protection against shifts that harm your schooling.",
+                legalCitations: [
+                    {
+                        law: "EU Young Workers Directive 94/33/EC — Article 8(2)",
+                        quote: "\"Member States shall adopt the measures necessary to limit the working time of adolescents to eight hours a day and 40 hours a week.\""
+                    },
+                    {
+                        law: "UN Convention on the Rights of the Child (UNCRC) — Article 32(1)",
+                        quote: "\"States Parties recognize the right of the child to be protected from economic exploitation and from performing any work that is likely to be hazardous or to interfere with the child's education, or to be harmful to the child's health or physical, mental, spiritual, moral or social development.\""
+                    }
+                ],
+                quiz: [
+                    {
+                        q: "What is the maximum daily working time limit set for adolescents under EU youth labor rules?",
+                        options: ["14 hours a day.", "8 hours a day.", "20 hours a day."],
+                        correct: 1
+                    },
+                    {
+                        q: "What is the maximum weekly working hour cap for adolescents?",
+                        options: ["40 hours a week.", "80 hours a week.", "65 hours a week."],
+                        correct: 0
+                    },
+                    {
+                        q: "An employer tries to schedule you for long shifts during school exam weeks that prevent you from studying. Which right is violated?",
+                        options: ["Your right to be protected from work that interferes with your education.", "Your right to buy video games.", "Your right to free snacks at work."],
+                        correct: 0
+                    },
+                    {
+                        q: "According to UNCRC Article 32(1), children must be protected from economic exploitation and any work that harms:",
+                        options: ["Only their shoe size.", "Their education, health, or physical, mental, spiritual, moral, or social development.", "The company's social media follower count."],
+                        correct: 1
+                    },
+                    {
+                        q: "Can a manager ask a 16-year-old worker to pull a 12-hour shift on a busy Saturday?",
+                        options: ["Yes, if the store is really crowded.", "No, working time for adolescents is capped at 8 hours a day.", "Only if they drink coffee."],
+                        correct: 1
+                    },
+                    {
+                        q: "Why do youth labor laws enforce strict weekly hour caps?",
+                        options: ["To ensure teens have time for school, rest, hobbies, and healthy growth.", "Because teens cannot count past 40.", "To stop teens from earning any money."],
+                        correct: 0
+                    },
+                    {
+                        q: "If a part-time job starts causing your school grades to drop because of excessive hours, what does the law prioritize?",
+                        options: ["The employer's profit.", "Your education and healthy development.", "Working even more hours."],
+                        correct: 1
+                    },
+                    {
+                        q: "What does 'economic exploitation' mean in youth employment?",
+                        options: ["Paying a teen fairly for a 4-hour weekend shift.", "Overworking or underpaying young people at the expense of their health and schooling.", "Giving a teen a holiday bonus."],
+                        correct: 1
+                    },
+                    {
+                        q: "Which international treaty specifically protects a child's right to education over work?",
+                        options: ["UN Convention on the Rights of the Child (UNCRC).", "The Geneva Convention on Maritime Law.", "The Outer Space Treaty."],
+                        correct: 0
+                    },
+                    {
+                        q: "If your boss schedules you for 48 hours in one week, what should you do?",
+                        options: ["Point out the 40-hour legal weekly limit for adolescents with your parents' support.", "Work all 48 hours without saying a word.", "Sleep under the cash register."],
+                        correct: 0
+                    }
+                ]
+            },
+            {
+                id: "2.4",
+                category: "employment",
+                categoryLabel: "Youth Employment Rights",
+                title: "Mandatory Rest Hours and Night Shift Bans",
+                icon: "",
+                image: "images/2.4 Rest Breaks and Night Work Bans.jpeg",
+                rule: "Governments must prohibit teenagers from working night shifts between 10 p.m. and 6 a.m., or between 11 p.m. and 7 a.m. Furthermore, teenagers are legally entitled to a minimum rest period of 12 consecutive hours during every 24-hour period.",
+                example: "Working at a restaurant late into the night and being scheduled to open early the next morning without enough time to sleep.",
+                right: "You are legally guaranteed overnight off-hours and a full 12-hour break of uninterrupted rest between shifts.",
+                legalCitations: [
+                    {
+                        law: "EU Young Workers Directive 94/33/EC — Article 9(1)(b) (Night Work)",
+                        quote: "\"Member States shall adopt the measures necessary to prohibit work by adolescents either between 10 p.m. and 6 a.m. or between 11 p.m. and 7 a.m.\""
+                    },
+                    {
+                        law: "EU Young Workers Directive 94/33/EC — Article 10(1)(b) (Rest Period)",
+                        quote: "\"Member States shall adopt the measures necessary to ensure that, for each 24-hour period, adolescents are entitled to a minimum rest period of 12 consecutive hours.\""
+                    }
+                ],
+                quiz: [
+                    {
+                        q: "During which overnight hours are adolescents generally prohibited from working under EU Directive 94/33/EC?",
+                        options: ["Between 2 p.m. and 4 p.m.", "Either between 10 p.m. and 6 a.m. or between 11 p.m. and 7 a.m.", "Between 9 a.m. and 12 p.m."],
+                        correct: 1
+                    },
+                    {
+                        q: "How many consecutive hours of rest must an adolescent receive in every 24-hour period?",
+                        options: ["4 consecutive hours.", "12 consecutive hours.", "6 consecutive hours."],
+                        correct: 1
+                    },
+                    {
+                        q: "You finish a restaurant shift at 9:30 p.m. and your boss schedules you to start again at 6:30 a.m. the next morning (9 hours later). Is this legal?",
+                        options: ["Yes, 9 hours is plenty.", "No, it violates your legal right to 12 consecutive hours of rest.", "Only on Fridays."],
+                        correct: 1
+                    },
+                    {
+                        q: "Why are night shifts banned for teenagers?",
+                        options: ["Because teens need healthy sleep cycles for brain development and school focus.", "Because stores turn off all lights at 8 p.m.", "Because buses stop running at noon."],
+                        correct: 0
+                    },
+                    {
+                        q: "What does '12 consecutive hours' of rest mean?",
+                        options: ["12 hours broken up into twelve 1-hour naps.", "12 straight, uninterrupted hours off work.", "12 hours of rest once a month."],
+                        correct: 1
+                    },
+                    {
+                        q: "If a manager asks a 16-year-old to cover a midnight-to-5 a.m. warehouse shift, what law does that break?",
+                        options: ["The legal prohibition on adolescent night work.", "Traffic parking rules.", "Copyright law."],
+                        correct: 0
+                    },
+                    {
+                        q: "Can a boss ask you to skip your 12-hour rest break if the business is short-staffed?",
+                        options: ["Yes, business needs always come first.", "No, mandatory rest hours are legally protected rights.", "Only if they buy you dinner."],
+                        correct: 1
+                    },
+                    {
+                        q: "What is the main purpose of combining night shift bans with a 12-hour rest rule?",
+                        options: ["To prevent severe exhaustion and protect teenage health.", "To make teenagers wake up at 4 a.m.", "To reduce weekend pay."],
+                        correct: 0
+                    },
+                    {
+                        q: "In a 24-hour day, if you work 8 hours, how much uninterrupted rest are you still guaranteed?",
+                        options: ["At least 12 consecutive hours.", "Only 2 hours.", "Zero hours."],
+                        correct: 0
+                    },
+                    {
+                        q: "What should you do if your work schedule repeatedly books you past 11 p.m.?",
+                        options: ["Show your employer the youth night-work ban rules and involve a parent or guardian.", "Keep working overnight secretly.", "Drink energy drinks every night."],
+                        correct: 0
+                    }
+                ]
+            },
+            {
+                id: "3.1",
+                category: "privacy",
+                categoryLabel: "Youth Digital Privacy",
+                title: "Account Creation and Digital Consent",
+                icon: "",
+                image: "images/3.1 Digital Consent and Parental Approval.jpeg",
+                rule: "Online platforms and apps can only process your personal data based on your own consent once you turn 16 (though some countries allow the age to be lowered to 13). If you are under that age, a parent or guardian must give permission first. You also have the right to be protected from unlawful attacks on your privacy, home, or reputation.",
+                example: "Trying to sign up for a new social media app or gaming account when you are 12 or 13 years old, and the app asks for a parent’s email to approve your account.",
+                right: "Apps cannot legally collect or use your personal information without proper age verification or parental permission.",
+                legalCitations: [
+                    {
+                        law: "GDPR Article 8(1)–(3) (Conditions Applicable to Child's Consent)",
+                        quote: "\"...the processing of the personal data of a child shall be lawful where the child is at least 16 years old. Where the child is below the age of 16 years, such processing shall be lawful only if and to the extent that consent is given or authorised by the holder of parental responsibility over the child. Member States may provide by law for a lower age... not below 13 years.\""
+                    },
+                    {
+                        law: "UNCRC Article 16(1)–(2)",
+                        quote: "\"No child shall be subjected to arbitrary or unlawful interference with his or her privacy, family, home or correspondence, nor to unlawful attacks on his or her honour and reputation.\""
+                    }
+                ],
+                quiz: [
+                    {
+                        q: "Under GDPR Article 8, what is the standard default age at which a young person can give their own digital consent for online services?",
+                        options: ["10 years old.", "16 years old (though some countries lower it to no less than 13).", "21 years old."],
+                        correct: 1
+                    },
+                    {
+                        q: "What is the absolute lowest digital consent age an EU country is allowed to set under GDPR?",
+                        options: ["8 years old.", "13 years old.", "11 years old."],
+                        correct: 1
+                    },
+                    {
+                        q: "If you are below your country's digital consent age, who must authorize the app to process your personal data?",
+                        options: ["Your best friend at school.", "The holder of parental responsibility (your parent or guardian).", "The app's automated chatbot."],
+                        correct: 1
+                    },
+                    {
+                        q: "Why does an app ask for a parent's email address when a 12-year-old tries to create an account?",
+                        options: ["To comply with laws requiring parental consent before collecting a child's data.", "To spam your parents with video game ads.", "Because 12-year-olds aren't allowed to have emails."],
+                        correct: 0
+                    },
+                    {
+                        q: "Which right does UNCRC Article 16 guarantee to every child?",
+                        options: ["Protection from arbitrary or unlawful interference with privacy, family, home, correspondence, and reputation.", "Free high-speed Wi-Fi everywhere.", "Unlimited in-app currency."],
+                        correct: 0
+                    },
+                    {
+                        q: "Is an online platform allowed to secretly collect a 12-year-old's personal data without parental approval?",
+                        options: ["Yes, if the app has cool graphics.", "No, processing a child's data without required parental consent is unlawful.", "Only on school holidays."],
+                        correct: 1
+                    },
+                    {
+                        q: "What counts as 'personal data' when creating an online account?",
+                        options: ["Your name, email, location, photos, and device identifiers.", "The color of the sky.", "Public historical facts."],
+                        correct: 0
+                    },
+                    {
+                        q: "Why do privacy laws require parental permission for younger teens and children?",
+                        options: ["To protect young people who may be less aware of online data risks.", "To prevent teenagers from ever using computers.", "To make sign-up forms longer."],
+                        correct: 0
+                    },
+                    {
+                        q: "If someone posts false rumors online to attack your honour and reputation, which treaty protects your right to legal protection?",
+                        options: ["UNCRC Article 16.", "The Maritime Shipping Act.", "Consumer Delivery Directive."],
+                        correct: 0
+                    },
+                    {
+                        q: "What must a company do when obtaining parental consent for a child under 16?",
+                        options: ["Make reasonable efforts to verify that consent was genuinely given by the parent.", "Guess a random email address.", "Ignore age checks completely."],
+                        correct: 0
+                    }
+                ]
+            },
+            {
+                id: "3.2",
+                category: "privacy",
+                categoryLabel: "Youth Digital Privacy",
+                title: "Digital Identity and Data Erasure",
+                icon: "",
+                image: "images/3.2 Digital Identity and Data Erasure.jpeg",
+                rule: "You have the right to ask a company or website to delete your personal data without unnecessary delay, especially if the data was collected when you were a child. If that company made your data public, they must also take reasonable steps to tell other websites to delete their links or copies of it.",
+                example: "You made an account on a website years ago, posted embarrassing photos, and now you want the company to wipe your profile completely.",
+                right: "You can demand that companies erase your personal data ('Right to be Forgotten') and stop using it to build marketing profiles about you.",
+                legalCitations: [
+                    {
+                        law: "GDPR Article 17(1) & 17(1)(f) (Right to Erasure / 'Right to be Forgotten')",
+                        quote: "\"The data subject shall have the right to obtain from the controller the erasure of personal data concerning him or her without undue delay... where the personal data have been collected in relation to the offer of information society services referred to in Article 8(1).\""
+                    },
+                    {
+                        law: "GDPR Article 17(2) & Recital 38",
+                        quote: "\"Where the controller has made the personal data public and is obliged... to erase the personal data, the controller... shall take reasonable steps, including technical measures, to inform controllers which are processing the personal data that the data subject has requested the erasure...\""
+                    }
+                ],
+                quiz: [
+                    {
+                        q: "What is the legal right to demand that a company delete your personal data called under GDPR Article 17?",
+                        options: ["The Right to Endless Storage.", "The Right to Erasure (or 'Right to be Forgotten').", "The Right to Free Advertising."],
+                        correct: 1
+                    },
+                    {
+                        q: "Why does GDPR give special strength to data erasure requests for information collected when you were a child?",
+                        options: ["Because children merit specific protection and may not have fully understood the risks when sharing data.", "Because kids' photos take up more server space.", "Because old accounts expire every 24 hours."],
+                        correct: 0
+                    },
+                    {
+                        q: "If a website made your personal data public and you ask them to delete it, what else must they do?",
+                        options: ["Nothing at all.", "Take reasonable steps to inform other websites/controllers to erase links or copies of that data.", "Print your photos out and mail them to you."],
+                        correct: 1
+                    },
+                    {
+                        q: "How quickly must a company erase your personal data once you make a valid deletion request?",
+                        options: ["Within 10 years.", "Without undue delay.", "Only when they shut down the company."],
+                        correct: 1
+                    },
+                    {
+                        q: "You posted embarrassing photos on an old gaming forum when you were 12, and now at 16 you want them gone. Can you demand erasure?",
+                        options: ["Yes, you have a strong legal right to have data collected during childhood erased.", "No, once posted online, you have zero rights forever.", "Only if you pay a $500 deletion fee."],
+                        correct: 0
+                    },
+                    {
+                        q: "According to GDPR Recital 38, why do children need extra protection with their personal data?",
+                        options: ["They may be less aware of the risks, consequences, safeguards, and their legal rights.", "They don't know how to use keyboards.", "They never use social media."],
+                        correct: 0
+                    },
+                    {
+                        q: "Can a company keep using your deleted profile's data to build a secret marketing profile about you?",
+                        options: ["Yes, marketing teams are exempt from privacy laws.", "No, you can demand they erase your data and stop profiling you.", "Only on weekends."],
+                        correct: 1
+                    },
+                    {
+                        q: "What happens if you withdraw your consent for an app to hold your personal info?",
+                        options: ["The company must erase your data if there is no other legal ground to keep it.", "The company can lock you out of the internet.", "Your phone automatically resets."],
+                        correct: 0
+                    },
+                    {
+                        q: "Does the Right to Erasure apply to links and replications shared with third-party data processors?",
+                        options: ["Yes, controllers must take reasonable technical steps to notify other processors to erase copies.", "No, third parties can keep everything forever.", "Only for text files, never photos."],
+                        correct: 0
+                    },
+                    {
+                        q: "Who controls your digital identity and personal data rights?",
+                        options: ["You (and your parents/guardians while you are a minor).", "Advertisers.", "Random internet users."],
+                        correct: 0
+                    }
+                ]
+            },
+            {
+                id: "3.3",
+                category: "privacy",
+                categoryLabel: "Youth Digital Privacy",
+                title: "Anti-Profiling and Targeted Ads",
+                icon: "",
+                image: "images/3.3 Anti-Profiling and Targeted Ads.jpeg",
+                rule: "Online platforms accessible to minors must set up strong privacy and safety protections. If a platform knows you are a minor, it is strictly banned from showing you targeted ads based on profiling and personal data. You also have the right to object to companies profiling you at any time.",
+                example: "Watching a few videos about sneakers or video games and suddenly every single ad on your feed tracks your hobbies and pushes you to buy them.",
+                right: "Platforms cannot legally track and profile kids or teens to target them with personalized advertisements.",
+                legalCitations: [
+                    {
+                        law: "EU Digital Services Act (DSA) — Article 28(1)–(2)",
+                        quote: "\"Providers of online platforms accessible to minors shall put in place appropriate and proportionate measures to ensure a high level of privacy, safety, and security of minors... Providers of online platforms shall not present advertisements on their interface based on profiling... using personal data of the recipient of the service when they are aware with reasonable certainty that the recipient of the service is a minor.\""
+                    },
+                    {
+                        law: "GDPR Article 21(1) (Right to Object)",
+                        quote: "\"The data subject shall have the right to object, on grounds relating to his or her particular situation, at any time to processing of personal data concerning him or her... including profiling based on those provisions.\""
+                    }
+                ],
+                quiz: [
+                    {
+                        q: "Under the EU Digital Services Act (DSA) Article 28(2), what is strictly banned when an online platform knows a user is a minor?",
+                        options: ["Showing any videos longer than 10 minutes.", "Presenting targeted advertisements based on profiling using the minor's personal data.", "Letting minors change their profile picture."],
+                        correct: 1
+                    },
+                    {
+                        q: "What is 'profiling' in digital privacy law?",
+                        options: ["Choosing a cool avatar.", "Automated tracking of your behavior, interests, and data to predict and target what you buy or watch.", "Writing your bio."],
+                        correct: 1
+                    },
+                    {
+                        q: "Under GDPR Article 21(1), when can you object to a company profiling your personal data?",
+                        options: ["At any time.", "Only once every five years.", "Never."],
+                        correct: 0
+                    },
+                    {
+                        q: "What does DSA Article 28(1) require online platforms accessible to minors to do?",
+                        options: ["Put in place appropriate measures to ensure a high level of privacy, safety, and security for minors.", "Sell minors' search history to toy companies.", "Disable all privacy settings by default."],
+                        correct: 0
+                    },
+                    {
+                        q: "You watch three videos about gaming chairs, and suddenly an app tracks your personal data to flood your feed with personalized ads. If the app knows you are 14, is this legal in the EU?",
+                        options: ["Yes, ads are always allowed.", "No, targeted ads based on profiling minors are strictly prohibited.", "Only if the gaming chair is on sale."],
+                        correct: 1
+                    },
+                    {
+                        q: "Why does the Digital Services Act ban targeted behavioral ads for teenagers?",
+                        options: ["To protect young people from manipulative marketing and invasive data tracking.", "Because teenagers never buy anything.", "To make apps load slower."],
+                        correct: 0
+                    },
+                    {
+                        q: "If a platform is 'aware with reasonable certainty' that you are under 18, what must it turn off?",
+                        options: ["Profiling-based targeted advertising.", "Your screen brightness.", "The search bar."],
+                        correct: 0
+                    },
+                    {
+                        q: "What happens when you exercise your Right to Object against profiling under GDPR?",
+                        options: ["The company must stop processing your data for profiling purposes.", "Your device explodes.", "You have to pay a fine."],
+                        correct: 0
+                    },
+                    {
+                        q: "Does banning targeted ads mean platforms cannot show any general ads at all?",
+                        options: ["They can still show basic non-personalized ads, just not ads built by profiling your personal data.", "All websites must shut down.", "Only ads for vegetables are allowed."],
+                        correct: 0
+                    },
+                    {
+                        q: "Which two laws work together to protect teens from algorithmic ad profiling?",
+                        options: ["The Digital Services Act (DSA) and GDPR.", "The Highway Code and Maritime Law.", "The Consumer Delivery Act and Aviation Rules."],
+                        correct: 0
+                    }
+                ]
+            },
+            {
+                id: "3.4",
+                category: "privacy",
+                categoryLabel: "Youth Digital Privacy",
+                title: "Safety by Design, Plain Language, and Honest AI",
+                icon: "",
+                image: "images/3.4 Safety By Design, Plain Language, Honest AI.jpeg",
+                rule: "Any privacy rules or data information aimed at young people must be written in clear, plain language that a child can easily understand. Additionally, if you are chatting or interacting with an AI system, the creator must clearly inform you that it is AI unless it is already obvious.",
+                example: "Opening a customer support chat or social media bot that pretends to be a human friend without telling you it is an artificial intelligence program, or hiding privacy rules in 40 pages of complex legal jargon.",
+                right: "You have the right to privacy rules you can actually read and understand, and companies cannot trick you into thinking an AI bot is a real person.",
+                legalCitations: [
+                    {
+                        law: "GDPR Article 12(1) & Recital 58 (Clear and Plain Language)",
+                        quote: "\"The controller shall take appropriate measures to provide any information... relating to processing to the data subject in a concise, transparent, intelligible and easily accessible form, using clear and plain language, in particular for any information addressed specifically to a child.\""
+                    },
+                    {
+                        law: "EU Artificial Intelligence Act (Regulation 2024/1689) — Article 50(1)",
+                        quote: "\"Providers shall ensure that AI systems intended to interact directly with natural persons are designed and developed in such a way that the natural persons concerned are informed that they are interacting with an AI system, unless this is obvious...\""
+                    }
+                ],
+                quiz: [
+                    {
+                        q: "Under GDPR Article 12(1) and Recital 58, how must privacy policies aimed at children and teens be written?",
+                        options: ["In complex Latin legal terms.", "In concise, transparent, clear, and plain language that a child can easily understand.", "In invisible white text."],
+                        correct: 1
+                    },
+                    {
+                        q: "According to EU Artificial Intelligence Act Article 50(1), what must happen when you interact directly with an AI chatbot?",
+                        options: ["The provider must clearly inform you that you are interacting with an AI system (unless it is already obvious).", "The AI should pretend to be your school principal.", "Nothing—companies can secretly use AI to trick users."],
+                        correct: 0
+                    },
+                    {
+                        q: "Why does GDPR Recital 58 require plain language for young users?",
+                        options: ["Because children merit specific protection and should easily understand how their data is used.", "Because teenagers don't like reading long books.", "To save printer ink."],
+                        correct: 0
+                    },
+                    {
+                        q: "An app uses a lifelike virtual influencer or support chat that acts like a real human teenager, with zero labels saying it's AI. Which law does this violate?",
+                        options: ["EU Artificial Intelligence Act Article 50(1) transparency rules.", "International maritime shipping rules.", "Minimum working age laws."],
+                        correct: 0
+                    },
+                    {
+                        q: "When is an AI provider exempt from adding an explicit 'You are talking to AI' notice?",
+                        options: ["Never, even on a calculator.", "Only when it is already completely obvious from the context to a reasonably observant person.", "Whenever the AI is offline."],
+                        correct: 1
+                    },
+                    {
+                        q: "If a gaming app's privacy policy is full of confusing legal jargon meant to confuse 13-year-olds, what rule is broken?",
+                        options: ["GDPR's requirement for clear, plain, and accessible language.", "The 30-day package delivery rule.", "The 12-hour rest period rule."],
+                        correct: 0
+                    },
+                    {
+                        q: "What does 'Safety by Design' mean for platforms used by young people?",
+                        options: ["Building strong privacy, transparency, and safety protections directly into the app from the start.", "Only fixing safety bugs after someone gets hurt.", "Making apps look colorful."],
+                        correct: 0
+                    },
+                    {
+                        q: "Can a company legally trick you into believing an AI bot is a real human friend to get you to share secrets?",
+                        options: ["Yes, if the bot is friendly.", "No, AI transparency rules prohibit deceiving users into thinking AI is human.", "Only on social media."],
+                        correct: 1
+                    },
+                    {
+                        q: "What four qualities does GDPR Article 12(1) require for privacy information?",
+                        options: ["Long, confusing, hidden, and expensive.", "Concise, transparent, intelligible, and easily accessible.", "Secret, coded, delayed, and complex."],
+                        correct: 1
+                    },
+                    {
+                        q: "What is your dual right under Section 3.4?",
+                        options: ["Privacy rules you can actually understand, and honest disclosure whenever you interact with AI.", "Free smartphones and unlimited data.", "The right to write your own laws."],
+                        correct: 0
+                    }
+                ]
+            }
+        ];
+
+        const bibliographyData = [
+            {
+                num: 1,
+                citation: "Council of the European Union. Council Directive 93/13/EEC of 5 April 1993 on Unfair Terms in Consumer Contracts. Official Journal of the European Communities, L 95, 21 Apr. 1993, pp. 29–34.",
+                articles: "Article 3(1), Article 5",
+                url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A31993L0013"
+            },
+            {
+                num: 2,
+                citation: "Council of the European Union. Council Directive 94/33/EC of 22 June 1994 on the Protection of Young People at Work. Official Journal of the European Communities, L 216, 20 Aug. 1994, pp. 12–20.",
+                articles: "Article 4(1), Article 7(1), Article 8(2), Article 9(1)(b), Article 10(1)(b)",
+                url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31994L0033"
+            },
+            {
+                num: 3,
+                citation: "European Parliament and Council of the European Union. Directive 2005/29/EC of 11 May 2005 Concerning Unfair Business-to-Consumer Commercial Practices in the Internal Market. Official Journal of the European Union, L 149, 11 June 2005, pp. 22–39.",
+                articles: "Annex I, Item 28",
+                url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32005L0029"
+            },
+            {
+                num: 4,
+                citation: "European Parliament and Council of the European Union. Directive 2011/83/EU of 25 October 2011 on Consumer Rights. Official Journal of the European Union, L 304, 22 Nov. 2011, pp. 64–88.",
+                articles: "Article 9(1), Article 13(1), Article 16(m), Article 18(1)–(3), Article 19, Article 22",
+                url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32011L0083"
+            },
+            {
+                num: 5,
+                citation: "European Parliament and Council of the European Union. Directive (EU) 2019/770 of 20 May 2019 on Certain Aspects Concerning Contracts for the Supply of Digital Content and Digital Services. Official Journal of the European Union, L 136, 22 May 2019, pp. 1–27.",
+                articles: "Article 3(1), Article 6(1), Article 7, Article 8(1)",
+                url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L0770"
+            },
+            {
+                num: 6,
+                citation: "European Parliament and Council of the European Union. Regulation (EU) 2016/679 of 27 April 2016 on the Protection of Natural Persons with Regard to the Processing of Personal Data (General Data Protection Regulation). Official Journal of the European Union, L 119, 4 May 2016, pp. 1–88.",
+                articles: "Article 8(1–3), Article 12(1), Article 17(1–2), Article 21(1), Recital 38, Recital 58",
+                url: "https://gdpr-info.eu/"
+            },
+            {
+                num: 7,
+                citation: "European Parliament and Council of the European Union. Regulation (EU) 2022/2065 of 19 October 2022 on a Single Market for Digital Services (Digital Services Act). Official Journal of the European Union, L 277, 27 Oct. 2022, pp. 1–102.",
+                articles: "Article 28(1), Article 28(2)",
+                url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2065"
+            },
+            {
+                num: 8,
+                citation: "European Parliament and Council of the European Union. Regulation (EU) 2024/1689 of 13 June 2024 Laying Down Harmonised Rules on Artificial Intelligence (Artificial Intelligence Act). Official Journal of the European Union, L 1689, 12 July 2024, pp. 1–144.",
+                articles: "Article 50(1)",
+                url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689"
+            },
+            {
+                num: 9,
+                citation: "International Labour Organization (ILO). Minimum Age Convention, 1973 (No. 138). NORMLEX, International Labour Organization, 26 June 1973.",
+                articles: "Article 2(3), Article 7(1)",
+                url: "https://normlex.ilo.org/dyn/normlex/en/f?p=NORMLEXPUB:12100:0::NO::P12100_ILO_CODE:C138"
+            },
+            {
+                num: 10,
+                citation: "International Labour Organization (ILO). Worst Forms of Child Labour Convention, 1999 (No. 182). NORMLEX, International Labour Organization, 17 June 1999.",
+                articles: "Article 3(d)",
+                url: "https://normlex.ilo.org/dyn/normlex/en/f?p=NORMLEXPUB:12100:0::NO::P12100_ILO_CODE:C182"
+            },
+            {
+                num: 11,
+                citation: "United Nations General Assembly. Convention on the Rights of the Child. United Nations Treaty Series, vol. 1577, 20 Nov. 1989, pp. 3–178.",
+                articles: "Article 16(1)–(2), Article 32(1)",
+                url: "https://www.unicef.org/child-rights-convention"
+            }
+        ];
+
+        let currentCategory = 'all';
+        let masteredModules = JSON.parse(localStorage.getItem('yls_mastered') || '[]');
+        let currentQuizState = {
+            moduleId: '1.1',
+            qIndex: 0,
+            score: 0,
+            answered: false,
+            selectedOption: null
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            populateDropdowns();
+            renderModules();
+            renderSources();
+            updateProgressBadge();
+            loadSimulator('1.1');
+            startQuiz('1.1');
+            switchView('home');
+        });
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        function switchView(viewName) {
+            ['home', 'simulators', 'quiz', 'sources'].forEach(v => {
+                document.getElementById(`view-${v}`).classList.add('hidden');
+                const navBtn = document.getElementById(`nav-${v}`);
+                const mNavBtn = document.getElementById(`m-nav-${v}`);
+                if (navBtn) navBtn.classList.remove('bg-blue-50', 'text-blue-700');
+                if (mNavBtn) mNavBtn.classList.remove('tab-active');
+            });
+
+            document.getElementById(`view-${viewName}`).classList.remove('hidden');
+            const activeBtn = document.getElementById(`nav-${viewName}`);
+            const activeMBtn = document.getElementById(`m-nav-${viewName}`);
+            if (activeBtn) activeBtn.classList.add('bg-blue-50', 'text-blue-700');
+            if (activeMBtn) activeMBtn.classList.add('tab-active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showToast(msg, icon = '') {
+            const box = document.getElementById('toast-box');
+            document.getElementById('toast-msg').textContent = msg;
+            document.getElementById('toast-icon').textContent = icon;
+            box.classList.remove('hidden');
+            setTimeout(() => box.classList.add('hidden'), 3500);
+        }
+
+        function updateProgressBadge() {
+            document.getElementById('header-progress').textContent = `${masteredModules.length} / 12 mastered`;
+        }
+
+        function populateDropdowns() {
+            const simSelect = document.getElementById('sim-select');
+            const quizSelect = document.getElementById('quiz-select');
+            simSelect.innerHTML = '';
+            quizSelect.innerHTML = '';
+
+            modulesData.forEach(m => {
+                const opt1 = document.createElement('option');
+                opt1.value = m.id;
+                opt1.textContent = `${m.id} — ${m.title}`;
+                simSelect.appendChild(opt1);
+
+                const opt2 = document.createElement('option');
+                opt2.value = m.id;
+                const badge = masteredModules.includes(m.id) ? ' — mastered' : '';
+                opt2.textContent = `Quiz ${m.id}: ${m.title} (${m.quiz.length} Qs)${badge}`;
+                quizSelect.appendChild(opt2);
+            });
+        }
+
+        function filterCategory(cat) {
+            currentCategory = cat;
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                if (btn.dataset.cat === cat) {
+                    btn.className = 'cat-btn px-4 py-2 rounded-xl text-sm font-bold bg-blue-700 text-white shadow-xs transition';
+                } else {
+                    btn.className = 'cat-btn px-4 py-2 rounded-xl text-sm font-semibold bg-white text-slate-700 border border-stone-200 hover:bg-stone-100 transition';
+                }
+            });
+            renderModules();
+        }
+
+        function renderModules() {
+            const grid = document.getElementById('modules-grid');
+            const query = document.getElementById('topic-search').value.toLowerCase().trim();
+            grid.innerHTML = '';
+
+            const filtered = modulesData.filter(m => {
+                const matchesCat = currentCategory === 'all' || m.category === currentCategory;
+                const matchesQuery = !query || 
+                    m.title.toLowerCase().includes(query) ||
+                    m.rule.toLowerCase().includes(query) ||
+                    m.right.toLowerCase().includes(query) ||
+                    m.id.includes(query);
+                return matchesCat && matchesQuery;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `<div class="col-span-full text-center py-12 bg-white rounded-2xl border border-stone-200 text-slate-500">No legal modules found matching your search.</div>`;
+                return;
+            }
+
+            const badgeColors = {
+                consumer: 'bg-amber-50 text-amber-900 border-amber-200/80',
+                employment: 'bg-emerald-50 text-emerald-900 border-emerald-200/80',
+                privacy: 'bg-red-50 text-red-900 border-red-200/80'
+            };
+
+            filtered.forEach(m => {
+                const isMastered = masteredModules.includes(m.id);
+                const card = document.createElement('div');
+                card.className = 'module-card card-elevate bg-white border border-stone-200/90 flex flex-col justify-between overflow-hidden';
+                card.innerHTML = `
+                    <div class="module-media">
+                        <img src="${m.image}" alt="${m.title}">
+                    </div>
+                    <div class="p-6 flex flex-col flex-1 justify-between">
+                        <div class="space-y-4">
+                            <div class="flex items-start justify-between gap-2">
+                                <span class="module-badge px-2.5 py-1 text-xs font-bold border ${badgeColors[m.category]}">
+                                    ${m.id} • ${m.categoryLabel}
+                                </span>
+                                ${isMastered ? '<span class="px-2.5 py-1 bg-emerald-100 text-emerald-900 text-xs font-extrabold">Mastered</span>' : ''}
+                            </div>
+                            <h3 class="text-lg font-extrabold text-slate-900 leading-snug tracking-tight">${m.title}</h3>
+                            <div class="space-y-2.5 text-sm">
+                                <p class="text-slate-600 line-clamp-3 leading-relaxed"><strong class="text-slate-800">The rule:</strong> ${m.rule}</p>
+                                <div class="p-3.5 bg-emerald-50 border border-emerald-200 text-emerald-950 text-xs leading-relaxed">
+                                    <strong>Your right:</strong> ${m.right}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pt-5 mt-5 border-t border-stone-100 flex flex-wrap gap-2">
+                            <button onclick="openModuleModal('${m.id}')" class="flex-1 py-2.5 px-3 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold transition">
+                                Read guide
+                            </button>
+                            <button onclick="jumpToSim('${m.id}')" class="py-2.5 px-3.5 bg-blue-50 hover:bg-blue-100 text-blue-800 text-xs font-bold transition" title="Interactive scenario">
+                                Try it
+                            </button>
+                            <button onclick="jumpToQuiz('${m.id}')" class="py-2.5 px-3.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-800 text-xs font-bold transition" title="Take quiz">
+                                Quiz
+                            </button>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function openModuleModal(id) {
+            const m = modulesData.find(x => x.id === id);
+            if (!m) return;
+
+            const citationsHTML = m.legalCitations.map(c => `
+                <div class="p-4 bg-stone-50 rounded-2xl border border-stone-200 space-y-1.5">
+                    <p class="text-xs font-extrabold text-blue-800 uppercase tracking-wide">${c.law}</p>
+                    <p class="text-xs sm:text-sm italic text-slate-700 leading-relaxed">${c.quote}</p>
+                </div>
+            `).join('');
+
+            document.getElementById('modal-body').innerHTML = `
+                <div class="modal-media">
+                    <img src="${m.image}" alt="${m.title}">
+                </div>
+                <div class="pr-8">
+                    <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">${m.title}</h3>
+                    <p class="section-meta">${m.categoryLabel} • Guide ${m.id}</p>
+                </div>
+
+                <div class="space-y-3.5 text-sm text-slate-700 leading-relaxed">
+                    <div class="p-4 bg-stone-50 border border-stone-200">
+                        <h4 class="font-extrabold text-slate-900 mb-1">The rule</h4>
+                        <p>${m.rule}</p>
+                    </div>
+                    <div class="p-4 bg-amber-50/70 border border-amber-200/80">
+                        <h4 class="font-extrabold text-amber-950 mb-1">Example</h4>
+                        <p class="text-amber-900">${m.example}</p>
+                    </div>
+                    <div class="p-4 bg-emerald-50/80 border border-emerald-200/80">
+                        <h4 class="font-extrabold text-emerald-950 mb-1">Your right</h4>
+                        <p class="text-emerald-900 font-medium">${m.right}</p>
+                    </div>
+                </div>
+
+                <div class="space-y-2.5 pt-2">
+                    <h4 class="text-sm font-extrabold text-slate-900">Legal citations</h4>
+                    ${citationsHTML}
+                </div>
+
+                <div class="pt-4 flex flex-wrap gap-3">
+                    <button onclick="closeModal(); jumpToSim('${m.id}')" class="flex-1 py-3 px-4 bg-blue-700 hover:bg-blue-600 text-white font-bold text-sm transition">
+                        Open scenario
+                    </button>
+                    <button onclick="closeModal(); jumpToQuiz('${m.id}')" class="flex-1 py-3 px-4 bg-indigo-700 hover:bg-indigo-600 text-white font-bold text-sm transition">
+                        Take quiz
+                    </button>
+                </div>
+            `;
+            document.getElementById('detail-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('detail-modal').classList.add('hidden');
+        }
+
+        function jumpToSim(id) {
+            document.getElementById('sim-select').value = id;
+            loadSimulator(id);
+            switchView('simulators');
+        }
+
+        function jumpToQuiz(id) {
+            document.getElementById('quiz-select').value = id;
+            startQuiz(id);
+            switchView('quiz');
+        }
+
+        function loadSimulator(id) {
+            const stage = document.getElementById('simulator-stage');
+            const m = modulesData.find(x => x.id === id);
+            if (!m) return;
+
+            let interactiveHTML = '';
+
+            switch (id) {
+                case '1.1':
+                    interactiveHTML = `
+                        <div class="grid md:grid-cols-2 gap-6 items-center">
+                            <div class="bg-slate-900 text-white p-6 rounded-2xl space-y-4 border border-slate-700 shadow-sm">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-bold text-lg"> SuperStream Pro</span>
+                                    <span class="px-2.5 py-1 bg-emerald-500 text-slate-950 text-xs font-extrabold rounded-full">FREE TRIAL</span>
+                                </div>
+                                <p class="text-xs text-slate-300">Start your 3-day free trial today! Tap below to play immediately.</p>
+                                <div class="p-3 bg-slate-800 rounded-xl text-[11px] text-slate-400 leading-tight">
+                                    Terms & Conditions (Page 48, Fine Print): By clicking "Start Free Trial", you irrevocably agree to an automatic €49.99/month non-refundable billing cycle with zero cancellation notice.
+                                </div>
+                                <div class="flex gap-2">
+                                    <button onclick="simFeedback('1.1', 'illegal')" class="flex-1 py-2.5 bg-red-600 hover:bg-red-500 rounded-xl text-xs font-bold transition">Enforce Hidden €49.99 Fee</button>
+                                    <button onclick="simFeedback('1.1', 'legal')" class="flex-1 py-2.5 bg-emerald-600 hover:bg-emerald-500 rounded-xl text-xs font-bold transition">Void Unfair Trap Clause</button>
+                                </div>
+                            </div>
+                            <div id="sim-result-1.1" class="p-5 bg-stone-50 rounded-2xl border border-stone-200 text-sm text-slate-700 leading-relaxed">
+                                <strong>Test the Law:</strong> Click either button on the app screen to see how Council Directive 93/13/EEC Articles 3(1) & 5 protect you from hidden subscription traps.
+                            </div>
+                        </div>`;
+                    break;
+
+                case '1.2':
+                    interactiveHTML = `
+                        <div class="grid md:grid-cols-2 gap-6 items-center">
+                            <div class="bg-stone-100 p-6 rounded-2xl border border-stone-300 space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-extrabold text-slate-900"> CyberQuest Mobile (€14.99)</span>
+                                    <span class="px-2.5 py-1 bg-red-100 text-red-700 text-xs font-bold rounded-lg">CRASH ERROR 500</span>
+                                </div>
+                                <p class="text-xs text-slate-600 leading-relaxed">Advertised: "Multiplayer mode + 50 levels + security updates."<br>Actual App: Crashes every 30 seconds and multiplayer does not exist.</p>
+                                <div class="flex gap-2">
+                                    <button onclick="simFeedback('1.2', 'refuse')" class="flex-1 py-2.5 bg-slate-700 hover:bg-slate-600 text-white rounded-xl text-xs font-bold transition">Seller: "No Refunds on Apps!"</button>
+                                    <button onclick="simFeedback('1.2', 'refund')" class="flex-1 py-2.5 bg-blue-700 hover:bg-blue-600 text-white rounded-xl text-xs font-bold transition">Demand Fix or Full Refund</button>
+                                </div>
+                            </div>
+                            <div id="sim-result-1.2" class="p-5 bg-stone-50 rounded-2xl border border-stone-200 text-sm text-slate-700 leading-relaxed">
+                                <strong>Test the Law:</strong> Select an action to see your rights under EU Directive 2019/770 Articles 6, 7 & 8.
+                            </div>
+                        </div>`;
+                    break;
+
+                case '1.3':
+                    interactiveHTML = `
+                        <div class="space-y-4">
+                            <div class="p-5 bg-stone-50 rounded-2xl border border-stone-200 space-y-4">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-bold text-slate-900"> Streetwear Hoodie Order Tracker</span>
+                                    <span id="day-badge" class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-extrabold rounded-full">Day 10 of 30</span>
+                                </div>
+                                <input type="range" min="1" max="45" value="10" oninput="updateDeliverySim(this.value)" class="w-full accent-blue-700 cursor-pointer">
+                                <div id="delivery-sim-status" class="p-4 bg-white rounded-xl border border-stone-200 text-sm text-slate-700 leading-relaxed">
+                                    <strong>Day 10:</strong> Within the standard 30-day delivery window under EU Directive 2011/83/EU Article 18(1).
+                                </div>
+                            </div>
+                        </div>`;
+                    break;
+
+                case '1.4':
+                    interactiveHTML = `
+                        <div class="grid md:grid-cols-2 gap-6 items-center">
+                            <div class="p-6 bg-white rounded-2xl border-2 border-stone-200 space-y-3">
+                                <h4 class="font-extrabold text-slate-900"> Concert Ticket Checkout</h4>
+                                <div class="flex justify-between text-sm"><span>General Admission Ticket</span><span class="font-bold">€35.00</span></div>
+                                <label class="flex items-center justify-between p-2.5 bg-amber-50 border border-amber-200 rounded-xl text-xs cursor-pointer">
+                                    <span class="flex items-center gap-2">
+                                        <input type="checkbox" id="sneaky-box" checked onchange="updateCheckoutSim()">
+                                        <span>Pre-ticked "VIP Ticket Insurance" (Added automatically!)</span>
+                                    </span>
+                                    <span class="font-bold text-amber-900">+€12.00</span>
+                                </label>
+                                <div class="flex justify-between text-base font-extrabold pt-2 border-t border-stone-200">
+                                    <span>Total Charged:</span>
+                                    <span id="checkout-total" class="text-red-600">€47.00 (Illegal Pre-Ticked Trap!)</span>
+                                </div>
+                            </div>
+                            <div id="checkout-explanation" class="p-5 bg-red-50 border border-red-200 rounded-2xl text-sm text-red-900 leading-relaxed">
+                                <strong>Violation Detected (Article 22):</strong> The seller used a pre-ticked checkbox to infer consent for an extra €12.00 fee. Uncheck the box to see legal transparent pricing, or claim a mandatory reimbursement!
+                            </div>
+                        </div>`;
+                    break;
+
+                case '2.1':
+                    interactiveHTML = `
+                        <div class="space-y-4">
+                            <div class="p-5 bg-stone-50 rounded-2xl border border-stone-200 space-y-4">
+                                <label class="block text-sm font-bold text-slate-800">Select Teenager's Age: <span id="age-display" class="text-blue-700 font-extrabold">14 years old</span></label>
+                                <input type="range" min="11" max="17" value="14" oninput="updateAgeWorkSim(this.value)" class="w-full accent-blue-700 cursor-pointer">
+                                <div id="age-work-result" class="p-4 bg-white rounded-xl border border-stone-200 text-sm text-slate-700 leading-relaxed">
+                                    <strong>Age 14 (ILO Convention No. 138 Art. 7):</strong> Full-time regular employment is <strong>BANNED</strong>. Only safe, light work outside school hours that does not harm health or education is permitted.
+                                </div>
+                            </div>
+                        </div>`;
+                    break;
+
+                case '2.2':
+                    interactiveHTML = `
+                        <div class="grid md:grid-cols-2 gap-6 items-center">
+                            <div class="p-5 bg-stone-50 rounded-2xl border border-stone-200 space-y-3">
+                                <h4 class="font-extrabold text-slate-900"> Summer Job Task Inspector</h4>
+                                <p class="text-xs text-slate-600">Click a task assigned to a 16-year-old worker to test workplace safety compliance:</p>
+                                <button onclick="simFeedback('2.2', 'safe')" class="w-full text-left p-3 bg-white hover:bg-emerald-50 border border-stone-200 rounded-xl text-xs font-bold transition"> Task A: Stocking light shelves & greeting customers</button>
+                                <button onclick="simFeedback('2.2', 'danger1')" class="w-full text-left p-3 bg-white hover:bg-red-50 border border-stone-200 rounded-xl text-xs font-bold transition"> Task B: Operating heavy industrial cutting machinery</button>
+                                <button onclick="simFeedback('2.2', 'danger2')" class="w-full text-left p-3 bg-white hover:bg-red-50 border border-stone-200 rounded-xl text-xs font-bold transition"> Task C: Handling toxic cleaning chemicals without gear</button>
+                            </div>
+                            <div id="sim-result-2.2" class="p-5 bg-stone-50 rounded-2xl border border-stone-200 text-sm text-slate-700 leading-relaxed">
+                                <strong>Legal Check:</strong> Select any task on the left to evaluate it under ILO Convention No. 182 & EU Directive 94/33/EC Article 7(1).
+                            </div>
+                        </div>`;
+                    break;
+
+                case '2.3':
+                    interactiveHTML = `
+                        <div class="p-5 bg-stone-50 rounded-2xl border border-stone-200 space-y-4">
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 mb-1">Daily Shift Hours: <span id="daily-hrs-val" class="text-blue-700">7 hrs</span></label>
+                                    <input type="range" min="2" max="12" value="7" id="daily-hrs-input" oninput="updateShiftCapSim()" class="w-full accent-blue-700 cursor-pointer">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 mb-1">Weekly Total Hours: <span id="weekly-hrs-val" class="text-blue-700">35 hrs</span></label>
+                                    <input type="range" min="5" max="55" value="35" id="weekly-hrs-input" oninput="updateShiftCapSim()" class="w-full accent-blue-700 cursor-pointer">
+                                </div>
+                            </div>
+                            <div id="shift-cap-result" class="p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-sm text-emerald-900 leading-relaxed">
+                                <strong> Legal Schedule:</strong> Within the maximum cap of 8 hours/day and 40 hours/week (EU Directive 94/33/EC Art. 8(2)), provided it does not interfere with school attendance or exams.
+                            </div>
+                        </div>`;
+                    break;
+
+                case '2.4':
+                    interactiveHTML = `
+                        <div class="grid md:grid-cols-2 gap-6 items-center">
+                            <div class="p-5 bg-stone-50 rounded-2xl border border-stone-200 space-y-3">
+                                <h4 class="font-extrabold text-slate-900"> Shift & Rest Gap Checker</h4>
+                                <button onclick="simFeedback('2.4', 'legal')" class="w-full text-left p-3 bg-white hover:bg-emerald-50 border border-stone-200 rounded-xl text-xs font-bold transition"> Finish at 7:00 PM → Next shift at 9:00 AM (14h rest)</button>
+                                <button onclick="simFeedback('2.4', 'night')" class="w-full text-left p-3 bg-white hover:bg-red-50 border border-stone-200 rounded-xl text-xs font-bold transition"> Shift scheduled from 11:30 PM to 4:00 AM</button>
+                                <button onclick="simFeedback('2.4', 'rest')" class="w-full text-left p-3 bg-white hover:bg-red-50 border border-stone-200 rounded-xl text-xs font-bold transition"> Finish at 9:30 PM → Next shift at 6:30 AM (9h rest)</button>
+                            </div>
+                            <div id="sim-result-2.4" class="p-5 bg-stone-50 rounded-2xl border border-stone-200 text-sm text-slate-700 leading-relaxed">
+                                <strong>Test Rest & Night Rules:</strong> Select a schedule to test EU Directive 94/33/EC Articles 9(1)(b) & 10(1)(b).
+                            </div>
+                        </div>`;
+                    break;
+
+                case '3.1':
+                    interactiveHTML = `
+                        <div class="p-5 bg-stone-50 rounded-2xl border border-stone-200 space-y-4">
+                            <label class="block text-sm font-bold text-slate-800">User Age Signing Up for Social App: <span id="consent-age-val" class="text-blue-700 font-extrabold">13 years old</span></label>
+                            <input type="range" min="10" max="18" value="13" oninput="updateConsentSim(this.value)" class="w-full accent-blue-700 cursor-pointer">
+                            <div id="consent-sim-result" class="p-4 bg-amber-50 border border-amber-200 rounded-xl text-sm text-amber-950 leading-relaxed">
+                                <strong>Age 13 (GDPR Article 8):</strong> Under the standard EU threshold of 16, parental/guardian authorization is required before processing personal data (unless national law explicitly lowers the threshold to 13).
+                            </div>
+                        </div>`;
+                    break;
+
+                case '3.2':
+                    interactiveHTML = `
+                        <div class="grid md:grid-cols-2 gap-6 items-center">
+                            <div class="p-5 bg-slate-900 text-white rounded-2xl space-y-3 shadow-sm">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-bold"> Old Social Profile (Created at Age 12)</span>
+                                    <span id="erasure-badge" class="px-2 py-0.5 bg-red-500 text-white text-xs font-bold rounded">PUBLIC & CACHED</span>
+                                </div>
+                                <p class="text-xs text-slate-300">Contains old photos, school name, and personal email shared publicly across 3 partner sites.</p>
+                                <button onclick="simFeedback('3.2', 'erase')" class="w-full py-2.5 bg-blue-600 hover:bg-blue-500 rounded-xl text-xs font-bold transition">Submit GDPR Article 17 Erasure Request</button>
+                            </div>
+                            <div id="sim-result-3.2" class="p-5 bg-stone-50 rounded-2xl border border-stone-200 text-sm text-slate-700 leading-relaxed">
+                                <strong>Test Data Erasure:</strong> Click the button to trigger your "Right to be Forgotten" under GDPR Article 17(1)(f) & 17(2).
+                            </div>
+                        </div>`;
+                    break;
+
+                case '3.3':
+                    interactiveHTML = `
+                        <div class="grid md:grid-cols-2 gap-6 items-center">
+                            <div class="p-5 bg-stone-50 rounded-2xl border border-stone-200 space-y-3">
+                                <h4 class="font-extrabold text-slate-900"> Teen Video Feed Ad Engine</h4>
+                                <p class="text-xs text-slate-600">User Account Status: <strong>Verified Minor (Age 15)</strong></p>
+                                <div class="flex gap-2">
+                                    <button onclick="simFeedback('3.3', 'tracked')" class="flex-1 py-2.5 bg-red-600 hover:bg-red-500 text-white rounded-xl text-xs font-bold transition">Serve Profiled Sneaker Ads</button>
+                                    <button onclick="simFeedback('3.3', 'blocked')" class="flex-1 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold transition">Block Profiling (DSA Art. 28)</button>
+                                </div>
+                            </div>
+                            <div id="sim-result-3.3" class="p-5 bg-stone-50 rounded-2xl border border-stone-200 text-sm text-slate-700 leading-relaxed">
+                                <strong>Test Anti-Profiling:</strong> Choose an ad mode to see how EU Digital Services Act Article 28(2) & GDPR Article 21 protect minors.
+                            </div>
+                        </div>`;
+                    break;
+
+                case '3.4':
+                    interactiveHTML = `
+                        <div class="grid md:grid-cols-2 gap-6 items-center">
+                            <div class="p-5 bg-stone-50 rounded-2xl border border-stone-200 space-y-3">
+                                <h4 class="font-extrabold text-slate-900"> StudyBuddy Chat Interface</h4>
+                                <div class="p-3 bg-white rounded-xl border border-stone-200 text-xs">
+                                    <p class="font-bold text-indigo-700">Chat Message:</p>
+                                    <p class="text-slate-700 mt-1">"Hey! I'm Alex, a 15-year-old student just like you! Tell me what school you go to!"</p>
+                                </div>
+                                <div class="flex gap-2">
+                                    <button onclick="simFeedback('3.4', 'deceptive')" class="flex-1 py-2.5 bg-red-600 hover:bg-red-500 text-white rounded-xl text-xs font-bold transition">Hide That "Alex" Is an AI Bot</button>
+                                    <button onclick="simFeedback('3.4', 'honest')" class="flex-1 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold transition">Show Clear AI Disclosure</button>
+                                </div>
+                            </div>
+                            <div id="sim-result-3.4" class="p-5 bg-stone-50 rounded-2xl border border-stone-200 text-sm text-slate-700 leading-relaxed">
+                                <strong>Test Honest AI & Plain Language:</strong> Select an option to see EU AI Act Article 50(1) and GDPR Article 12(1) in action.
+                            </div>
+                        </div>`;
+                    break;
+            }
+
+            stage.innerHTML = `
+                <div class="space-y-6">
+                    <div class="border-b border-stone-100 pb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                        <div class="flex items-center gap-3">
+                            <img class="section-thumb" src="${m.image}" alt="">
+                            <div>
+                                <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">${m.title}</h3>
+                                <p class="section-meta">${m.categoryLabel} • Guide ${m.id}</p>
+                            </div>
+                        </div>
+                        <button onclick="jumpToQuiz('${m.id}')" class="px-4 py-2 bg-indigo-700 hover:bg-indigo-600 text-white text-xs font-bold transition self-start">
+                            Take quiz →
+                        </button>
+                    </div>
+                    ${interactiveHTML}
+                </div>
+            `;
+        }
+
+        function simFeedback(modId, action) {
+            const box = document.getElementById(`sim-result-${modId}`);
+            if (!box) return;
+
+            const responses = {
+                '1.1': {
+                    illegal: `<div class="p-4 bg-red-50 border border-red-200 rounded-xl text-red-900 leading-relaxed"><strong> Illegal & Unenforceable:</strong> Under Council Directive 93/13/EEC Articles 3(1) & 5, hiding an automatic €49.99 charge in complex fine print causes a significant imbalance and fails the plain-language rule. The clause is legally void!</div>`,
+                    legal: `<div class="p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-900 leading-relaxed"><strong> Protected:</strong> Because the renewal trap was hidden and not drafted in plain, intelligible language, it cannot be enforced against you or your parents.</div>`
+                },
+                '1.2': {
+                    refuse: `<div class="p-4 bg-red-50 border border-red-200 rounded-xl text-red-900 leading-relaxed"><strong> Illegal Refusal:</strong> Under EU Directive 2019/770 Article 7, digital content must fit its description and function properly. A blanket "no refunds" policy does not excuse a broken app.</div>`,
+                    refund: `<div class="p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-900 leading-relaxed"><strong> Legal Right Exercised:</strong> You are entitled to have the game fixed/updated to match its store description, or receive a full reimbursement.</div>`
+                },
+                '2.2': {
+                    safe: `<div class="p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-900 leading-relaxed"><strong> Permitted Light/Safe Task:</strong> Non-hazardous retail or light customer service tasks that do not threaten health, safety, or schooling are permitted for eligible teens.</div>`,
+                    danger1: `<div class="p-4 bg-red-50 border border-red-200 rounded-xl text-red-900 leading-relaxed"><strong> Strictly Banned (Directive 94/33/EC Art. 7):</strong> Operating heavy industrial machinery poses severe physical risks to young workers and is legally prohibited.</div>`,
+                    danger2: `<div class="p-4 bg-red-50 border border-red-200 rounded-xl text-red-900 leading-relaxed"><strong> Strictly Banned (ILO Convention 182 Art. 3(d)):</strong> Exposure to hazardous chemicals without protection is strictly banned for minors.</div>`
+                },
+                '2.4': {
+                    legal: `<div class="p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-900 leading-relaxed"><strong> Legal Schedule:</strong> Ends before the 10 p.m. night ban and provides 14 consecutive hours of rest (exceeding the 12-hour legal minimum).</div>`,
+                    night: `<div class="p-4 bg-red-50 border border-red-200 rounded-xl text-red-900 leading-relaxed"><strong> Night Work Violation (Directive 94/33/EC Art. 9(1)(b)):</strong> Adolescents are legally barred from working between 10 p.m.–6 a.m. or 11 p.m.–7 a.m.</div>`,
+                    rest: `<div class="p-4 bg-red-50 border border-red-200 rounded-xl text-red-900 leading-relaxed"><strong> Rest Period Violation (Directive 94/33/EC Art. 10(1)(b)):</strong> Only 9 hours between shifts violates the mandatory 12 consecutive hours of rest per 24-hour period.</div>`
+                },
+                '3.2': {
+                    erase: (() => {
+                        const badge = document.getElementById('erasure-badge');
+                        if (badge) {
+                            badge.textContent = 'ERASED & NOTIFIED';
+                            badge.className = 'px-2 py-0.5 bg-emerald-500 text-slate-950 text-xs font-bold rounded';
+                        }
+                        return `<div class="p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-900 leading-relaxed"><strong> Data Wiped (GDPR Art. 17):</strong> The company must delete your childhood data without undue delay AND take reasonable technical steps to notify other sites to erase cached links or copies!</div>`;
+                    })()
+                },
+                '3.3': {
+                    tracked: `<div class="p-4 bg-red-50 border border-red-200 rounded-xl text-red-900 leading-relaxed"><strong> DSA Violation (Article 28(2)):</strong> Online platforms are strictly prohibited from presenting profiling-based targeted ads using personal data when they know the user is a minor.</div>`,
+                    blocked: `<div class="p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-900 leading-relaxed"><strong> Compliant Privacy Protection:</strong> Behavioral profiling is disabled for minors, and under GDPR Article 21 you always retain the right to object to profiling.</div>`
+                },
+                '3.4': {
+                    deceptive: `<div class="p-4 bg-red-50 border border-red-200 rounded-xl text-red-900 leading-relaxed"><strong> EU AI Act Violation (Article 50(1)):</strong> Providers cannot design AI chatbots to trick users into believing they are talking to a real human teenager without clear disclosure.</div>`,
+                    honest: `<div class="p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-900 leading-relaxed"><strong> Transparent & Plain-Language Compliant:</strong> Disclosing "You are chatting with an AI assistant" plus providing kid-friendly plain-language privacy notices fulfills EU AI Act Art. 50(1) and GDPR Art. 12(1).</div>`
+                }
+            };
+
+            box.innerHTML = responses[modId][action];
+        }
+
+        function updateDeliverySim(day) {
+            day = parseInt(day);
+            document.getElementById('day-badge').textContent = `Day ${day} of 30`;
+            const box = document.getElementById('delivery-sim-status');
+            if (day <= 30) {
+                box.className = 'p-4 bg-white rounded-xl border border-stone-200 text-sm text-slate-700 leading-relaxed';
+                box.innerHTML = `<strong>Day ${day}:</strong> Still within the standard 30-day delivery window under EU Directive 2011/83/EU Article 18(1) (unless an earlier date was agreed).`;
+            } else {
+                box.className = 'p-4 bg-amber-50 border border-amber-300 rounded-xl text-sm text-amber-950 leading-relaxed';
+                box.innerHTML = `<strong> Day ${day} (Past 30-Day Limit!):</strong> Under EU Directive 2011/83/EU Article 18(2)–(3), you and your parents can set one final appropriate deadline. If the seller still fails to deliver, you can terminate the order and receive a full refund without undue delay!`;
+            }
+        }
+
+        function updateCheckoutSim() {
+            const checked = document.getElementById('sneaky-box').checked;
+            const totalEl = document.getElementById('checkout-total');
+            const expEl = document.getElementById('checkout-explanation');
+            if (checked) {
+                totalEl.textContent = '€47.00 (Illegal Pre-Ticked Trap!)';
+                totalEl.className = 'text-red-600';
+                expEl.className = 'p-5 bg-red-50 border border-red-200 rounded-2xl text-sm text-red-900 leading-relaxed';
+                expEl.innerHTML = `<strong>Violation Detected (Article 22):</strong> The seller used a pre-ticked checkbox to infer consent for an extra €12.00 fee. Uncheck the box to see legal transparent pricing, or claim a mandatory reimbursement!`;
+            } else {
+                totalEl.textContent = '€35.00 (Honest Upfront Price)';
+                totalEl.className = 'text-emerald-700';
+                expEl.className = 'p-5 bg-emerald-50 border border-emerald-200 rounded-2xl text-sm text-emerald-900 leading-relaxed';
+                expEl.innerHTML = `<strong> Transparent Pricing (Article 22):</strong> Extra add-ons require your active opt-in ("express consent"). No hidden fees or excessive payment surcharges (Article 19) are allowed.`;
+            }
+        }
+
+        function updateAgeWorkSim(age) {
+            age = parseInt(age);
+            document.getElementById('age-display').textContent = `${age} years old`;
+            const box = document.getElementById('age-work-result');
+            if (age < 13) {
+                box.className = 'p-4 bg-red-50 border border-red-200 rounded-xl text-sm text-red-900 leading-relaxed';
+                box.innerHTML = `<strong>Age ${age} (Prohibited):</strong> Under ILO Convention No. 138 and EU Directive 94/33/EC Article 4(1), regular employment of children under 13 is strictly prohibited.`;
+            } else if (age <= 14) {
+                box.className = 'p-4 bg-amber-50 border border-amber-200 rounded-xl text-sm text-amber-950 leading-relaxed';
+                box.innerHTML = `<strong>Age ${age} (Light Work Tier Only — ILO Art. 7):</strong> Full-time work is banned. National laws may only permit safe light work that does not harm health, development, or school attendance.`;
+            } else {
+                box.className = 'p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-sm text-emerald-900 leading-relaxed';
+                box.innerHTML = `<strong>Age ${age} (Adolescent Worker Tier):</strong> Meets the international minimum working age of 15 (once compulsory schooling is completed), while remaining strictly protected by youth hour caps, night-work bans, and safety rules.`;
+            }
+        }
+
+        function updateShiftCapSim() {
+            const d = parseInt(document.getElementById('daily-hrs-input').value);
+            const w = parseInt(document.getElementById('weekly-hrs-input').value);
+            document.getElementById('daily-hrs-val').textContent = `${d} hrs`;
+            document.getElementById('weekly-hrs-val').textContent = `${w} hrs`;
+            const box = document.getElementById('shift-cap-result');
+
+            if (d > 8 || w > 40) {
+                box.className = 'p-4 bg-red-50 border border-red-200 rounded-xl text-sm text-red-900 leading-relaxed';
+                box.innerHTML = `<strong> Illegal Overtime (${d}h/day, ${w}h/week):</strong> EU Young Workers Directive 94/33/EC Article 8(2) strictly limits adolescent working time to a maximum of <strong>8 hours a day and 40 hours a week</strong>.`;
+            } else {
+                box.className = 'p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-sm text-emerald-900 leading-relaxed';
+                box.innerHTML = `<strong> Within Legal Hour Limits (${d}h/day, ${w}h/week):</strong> Complies with the 8h/day and 40h/week limits, provided it never interferes with your school attendance or exams (UNCRC Art. 32).`;
+            }
+        }
+
+        function updateConsentSim(age) {
+            age = parseInt(age);
+            document.getElementById('consent-age-val').textContent = `${age} years old`;
+            const box = document.getElementById('consent-sim-result');
+            if (age < 13) {
+                box.className = 'p-4 bg-red-50 border border-red-200 rounded-xl text-sm text-red-900 leading-relaxed';
+                box.innerHTML = `<strong>Age ${age} (Parental Permission Mandatory):</strong> Under GDPR Article 8, no EU country can set digital consent below 13. The platform must verify parental/guardian consent before processing your data.`;
+            } else if (age < 16) {
+                box.className = 'p-4 bg-amber-50 border border-amber-200 rounded-xl text-sm text-amber-950 leading-relaxed';
+                box.innerHTML = `<strong>Age ${age} (Country-Dependent / Parental Approval):</strong> GDPR sets the default digital consent age at 16, though individual Member States may lower it to between 13 and 15. Otherwise, a parent or guardian must authorize your account.`;
+            } else {
+                box.className = 'p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-sm text-emerald-900 leading-relaxed';
+                box.innerHTML = `<strong>Age ${age} (Independent Digital Consent):</strong> At 16 or older, you can legally consent to personal data processing yourself under GDPR Article 8(1), while still keeping all minor anti-profiling and erasure protections until 18!`;
+            }
+        }
+
+        function startQuiz(modId) {
+            currentQuizState = {
+                moduleId: modId,
+                qIndex: 0,
+                score: 0,
+                answered: false,
+                selectedOption: null
+            };
+            renderQuizQuestion();
+        }
+
+        function renderQuizQuestion() {
+            const container = document.getElementById('quiz-container');
+            const m = modulesData.find(x => x.id === currentQuizState.moduleId);
+            if (!m) return;
+
+            const total = m.quiz.length;
+            const qObj = m.quiz[currentQuizState.qIndex];
+            const progressPct = Math.round(((currentQuizState.qIndex) / total) * 100);
+
+            const letters = ['A', 'B', 'C'];
+            const optionsHTML = qObj.options.map((opt, idx) => {
+                let btnStyle = 'bg-stone-50 hover:bg-blue-50/70 border-stone-200 text-slate-800';
+                let statusTag = '';
+
+                if (currentQuizState.answered) {
+                    if (idx === qObj.correct) {
+                        btnStyle = 'bg-emerald-50 border-emerald-500 text-emerald-950 font-bold';
+                        statusTag = '<span class="text-xs font-extrabold text-emerald-700 shrink-0"> Correct</span>';
+                    } else if (idx === currentQuizState.selectedOption) {
+                        btnStyle = 'bg-red-50 border-red-400 text-red-950';
+                        statusTag = '<span class="text-xs font-extrabold text-red-700 shrink-0">× Incorrect</span>';
+                    } else {
+                        btnStyle = 'bg-stone-50 border-stone-200 text-slate-400 opacity-60';
+                    }
+                }
+
+                return `
+                    <button onclick="selectQuizAnswer(${idx})" ${currentQuizState.answered ? 'disabled' : ''} class="w-full text-left p-4 rounded-2xl border-2 transition flex items-center justify-between gap-3 ${btnStyle}">
+                        <div class="flex items-center space-x-3">
+                            <span class="w-8 h-8 rounded-xl bg-white border border-stone-300 flex items-center justify-center text-xs font-extrabold text-slate-700 shrink-0">
+                                ${letters[idx]}
+                            </span>
+                            <span class="text-sm leading-relaxed">${opt}</span>
+                        </div>
+                        ${statusTag}
+                    </button>
+                `;
+            }).join('');
+
+            container.innerHTML = `
+                <div class="space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-stone-100 pb-4">
+                        <div class="flex items-center gap-3">
+                            <img class="section-thumb" src="${m.image}" alt="">
+                            <div>
+                                <h3 class="text-xl font-extrabold text-slate-900 tracking-tight">${m.title}</h3>
+                                <p class="section-meta">${m.categoryLabel} • Guide ${m.id}</p>
+                            </div>
+                        </div>
+                        <div class="text-xs font-bold text-slate-600 bg-stone-100 px-3.5 py-1.5 self-start">
+                            Question ${currentQuizState.qIndex + 1} of ${total} • Score: ${currentQuizState.score}
+                        </div>
+                    </div>
+
+                    <div class="w-full bg-stone-100 h-2.5 overflow-hidden">
+                        <div class="quiz-progress bg-blue-700 h-full transition-all duration-300" style="width: ${progressPct}%"></div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4 class="text-base sm:text-lg font-bold text-slate-900 leading-snug">
+                            ${currentQuizState.qIndex + 1}. ${qObj.q}
+                        </h4>
+                        <div class="space-y-3">
+                            ${optionsHTML}
+                        </div>
+                    </div>
+
+                    <div class="pt-4 flex justify-between items-center border-t border-stone-100">
+                        <button onclick="openModuleModal('${m.id}')" class="text-xs font-bold text-slate-500 hover:text-blue-700 transition">
+                            Review the guide
+                        </button>
+                        ${currentQuizState.answered ? `
+                            <button onclick="nextQuizQuestion()" class="px-6 py-2.5 bg-blue-700 hover:bg-blue-600 text-white font-bold rounded-xl text-sm shadow-sm transition">
+                                ${currentQuizState.qIndex + 1 < total ? 'Next question →' : 'See results'}
+                            </button>
+                        ` : '<span class="text-xs text-slate-400">Select an answer to continue</span>'}
+                    </div>
+                </div>
+            `;
+        }
+
+        function selectQuizAnswer(idx) {
+            if (currentQuizState.answered) return;
+            const m = modulesData.find(x => x.id === currentQuizState.moduleId);
+            const qObj = m.quiz[currentQuizState.qIndex];
+
+            currentQuizState.answered = true;
+            currentQuizState.selectedOption = idx;
+            if (idx === qObj.correct) {
+                currentQuizState.score++;
+            }
+            renderQuizQuestion();
+        }
+
+        function nextQuizQuestion() {
+            const m = modulesData.find(x => x.id === currentQuizState.moduleId);
+            if (currentQuizState.qIndex + 1 < m.quiz.length) {
+                currentQuizState.qIndex++;
+                currentQuizState.answered = false;
+                currentQuizState.selectedOption = null;
+                renderQuizQuestion();
+            } else {
+                renderQuizSummary();
+            }
+        }
+
+        function renderQuizSummary() {
+            const container = document.getElementById('quiz-container');
+            const m = modulesData.find(x => x.id === currentQuizState.moduleId);
+            const total = m.quiz.length;
+            const pct = Math.round((currentQuizState.score / total) * 100);
+            const passed = pct >= 80;
+
+            if (passed && !masteredModules.includes(m.id)) {
+                masteredModules.push(m.id);
+                localStorage.setItem('yls_mastered', JSON.stringify(masteredModules));
+                updateProgressBadge();
+                populateDropdowns();
+                document.getElementById('quiz-select').value = m.id;
+                renderModules();
+                showToast(`Mastery Badge Earned for Section ${m.id}!`, '');
+            }
+
+            const currentIdx = modulesData.findIndex(x => x.id === m.id);
+            const nextMod = modulesData[(currentIdx + 1) % modulesData.length];
+
+            container.innerHTML = `
+                <div class="text-center max-w-lg mx-auto py-6 space-y-5">
+                    <div class="summary-media"><img src="${m.image}" alt=""></div>
+                    <h3 class="text-2xl font-extrabold text-slate-900 tracking-tight">
+                        ${passed ? 'Section Mastered!' : 'Keep Practicing!'}
+                    </h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        You scored <strong class="text-slate-900">${currentQuizState.score} out of ${total} (${pct}%)</strong> on <strong>${m.id} ${m.title}</strong>.
+                        ${passed ? 'You have unlocked the Mastery Badge for this module!' : 'Score 80% or higher to earn the Mastery Badge.'}
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-3 pt-2">
+                        <button onclick="startQuiz('${m.id}')" class="px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl text-sm transition">
+                            Retake quiz
+                        </button>
+                        <button onclick="jumpToQuiz('${nextMod.id}')" class="px-5 py-2.5 bg-blue-700 hover:bg-blue-600 text-white font-bold rounded-xl text-sm transition">
+                            Next quiz →
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderSources() {
+            const list = document.getElementById('sources-list');
+            list.innerHTML = bibliographyData.map(item => `
+                <div class="p-4 sm:p-5 bg-stone-50 rounded-2xl border border-stone-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div class="space-y-1.5">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="px-2.5 py-0.5 bg-blue-700 text-white text-xs font-extrabold rounded-md">Source #${item.num}</span>
+                            <span class="text-xs font-bold text-slate-500">Articles Used: ${item.articles}</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-slate-800 leading-relaxed">${item.citation}</p>
+                    </div>
+                    <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-white hover:bg-blue-50 text-blue-700 border border-stone-200 rounded-xl text-xs font-bold whitespace-nowrap self-start sm:self-center shadow-2xs transition">
+                        Open source ↗
+                    </a>
+                </div>
+            `).join('');
+        }
+    </script>
+</body>
+</html>
